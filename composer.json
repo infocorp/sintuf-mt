@@ -1,6 +1,6 @@
 {
-    "name": "infocorp/affemat",
-    "description": "Website institucional da AFFEMAT",
+    "name": "infocorp/sintuf",
+    "description": "Website institucional da Sintuf-MT",
 
     "autoload": {
         "psr-0": { "": "src/" }
