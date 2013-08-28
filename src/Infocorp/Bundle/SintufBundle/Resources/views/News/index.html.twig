@@ -1,0 +1,47 @@
+{% extends 'InfocorpAffematBundle::layout.html.twig' %}
+
+{% block content %}
+  <ul class="breadcrumb">
+    <li><a href="{{ path('infocorp_affemat_homepage') }}">Home</a><span class="divider">/</span></li>
+    {% if subpage %}
+      <li><a href="{{ path('infocorp_affemat_noticias') }}">Notícias</a><span class="divider">/</span></li>
+      <li class="active">Categorias</li>
+    {% else %}
+      <li class="active">Notícias</li>
+    {% endif %}
+  </ul>
+  
+  <div class="row-fluid">
+    <div class="span2">
+      <ul class="nav nav-list">
+        <li class="nav-header">Categorias</li>
+        {% for category in categories %}
+          <li>
+            <a href="{{ path('infocorp_affemat_noticias_categoria', { 'slug': category.slug }) }}">
+              {{ category.name }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="span10">
+      {% for item in news %}
+        <div class="news-wrap">
+          <a href="{{ path('infocorp_affemat_noticia', { 'slug': item.slug }) }}">
+            {% media item.image, 'reference' %}
+          </a>
+          <div class="news-text">
+            <a href="{{ path('infocorp_affemat_noticia', { 'slug': item.slug }) }}">
+              <h2>{{ item.title }}</h2>
+            </a>
+            <p>{{ item.abstract }}</p>
+            {# PARA ACESSAR A QUANTIDADE DE COMENTARIOS DE CADA POST
+              {{ item.commentsCount }}
+             #}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+  <title>{% block title %}Affemat{% endblock %}</title>
+  {% block stylesheets %}
+    {% stylesheets 
+      'bundles/infocorpaffemat/css/style.css'
+      'bundles/infocorpaffemat/css/bootstrap/bootstrap.min.css'
+      'bundles/infocorpaffemat/css/bootstrap/bootstrap-responsive.css'
+      'bundles/infocorpaffemat/css/normalize.css'
+      filter='cssrewrite' 
+    %}
+      <link rel="stylesheet" href="{{ asset_url }}">
+    {% endstylesheets %}
+  {% endblock %}
+
+  {% block javascripts %}
+    {% javascripts 
+      'bundles/infocorpaffemat/js/bootstrap.min.js'
+    %}
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+      <script src="{{ asset_url }}"></script>
+      <script>
+        !function ($) {
+          $(function(){
+            // carousel demo
+            $('#myCarousel').carousel();
+            $('#myCarouselParceiros').carousel();
+          })
+        }(window.jQuery)
+      </script>
+    {% endjavascripts %}
+  {% endblock %}
+</head>
+<body>  
+    {% block header %}
+      <header>
+        <div class="header_top">
+          <div class="header_desc">
+            <h1> Associação dos Funcionários da Fazenda do Estado de Mato Grosso</h1>
+          </div>
+          <div class="logo">
+            <a href="{{ path('infocorp_affemat_homepage') }}" title="AFFEMAT" alt="AFFEMAT"><img src="{{ asset('bundles/infocorpaffemat/images/logo.png') }}" title="AFFEMAT" alt="AFFEMAT"></a>
+          </div>
+        </div>
+        <div class="menu_sup">
+          <ul>
+            <li><a href="{{ path('infocorp_affemat_homepage') }}">Início</a></li>
+            <li><a href="#">Associe-se</a></li>
+            <li><a href="#">Saúde</a></li>
+            <li><a href="#">Clubes</a></li>
+            <li><a href="#">Convênios</a></li>
+            <li><a href="{{ path('infocorp_affemat_fale_conosco') }}">Contato</a></li>
+          </ul>
+        </div>
+      </header>
+    {% endblock %}
+
+    <div class="row-fluid">
+    {% block content %}
+    {% endblock %}
+    </div>
+    
+    {% block media_social %}
+      <div id="media_social">
+        <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAffemat%2F201137789921676&amp;width=900&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=289289821083335" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:900px; height:258px;" allowTransparency="true"></iframe>
+      </div>
+    {% endblock %}
+
+    {% block rodape %}
+      <div id="rodape">rodape</div>
+    {% endblock %}
+</body>
+</html>
