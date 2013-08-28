@@ -9,7 +9,7 @@ use Sonata\NewsBundle\Model\Tag;
  * Institutional
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Infocorp\Bundle\AffematBundle\Entity\InstitutionalRepository")
+ * @ORM\Entity(repositoryClass="Infocorp\Bundle\SintufBundle\Entity\InstitutionalRepository")
  */
 class Institutional
 {

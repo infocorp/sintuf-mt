@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Featured
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Infocorp\Bundle\AffematBundle\Entity\FeaturedRepository")
+ * @ORM\Entity(repositoryClass="Infocorp\Bundle\SintufBundle\Entity\FeaturedRepository")
  */
 class Featured
 {
