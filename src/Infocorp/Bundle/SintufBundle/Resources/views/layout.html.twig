@@ -4,10 +4,10 @@
   <title>{% block title %}Affemat{% endblock %}</title>
   {% block stylesheets %}
     {% stylesheets 
-      'bundles/infocorpaffemat/css/style.css'
-      'bundles/infocorpaffemat/css/bootstrap/bootstrap.min.css'
-      'bundles/infocorpaffemat/css/bootstrap/bootstrap-responsive.css'
-      'bundles/infocorpaffemat/css/normalize.css'
+      'bundles/infocorpsintuf/css/style.css'
+      'bundles/infocorpsintuf/css/bootstrap/bootstrap.min.css'
+      'bundles/infocorpsintuf/css/bootstrap/bootstrap-responsive.css'
+      'bundles/infocorpsintuf/css/normalize.css'
       filter='cssrewrite' 
     %}
       <link rel="stylesheet" href="{{ asset_url }}">
@@ -16,7 +16,7 @@
 
   {% block javascripts %}
     {% javascripts 
-      'bundles/infocorpaffemat/js/bootstrap.min.js'
+      'bundles/infocorpsintuf/js/bootstrap.min.js'
     %}
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
       <script src="{{ asset_url }}"></script>
@@ -40,17 +40,17 @@
             <h1> Associação dos Funcionários da Fazenda do Estado de Mato Grosso</h1>
           </div>
           <div class="logo">
-            <a href="{{ path('infocorp_affemat_homepage') }}" title="AFFEMAT" alt="AFFEMAT"><img src="{{ asset('bundles/infocorpaffemat/images/logo.png') }}" title="AFFEMAT" alt="AFFEMAT"></a>
+            <a href="{{ path('infocorp_sintuf_homepage') }}" title="AFFEMAT" alt="AFFEMAT"><img src="{{ asset('bundles/infocorpsintuf/images/logo.png') }}" title="AFFEMAT" alt="AFFEMAT"></a>
           </div>
         </div>
         <div class="menu_sup">
           <ul>
-            <li><a href="{{ path('infocorp_affemat_homepage') }}">Início</a></li>
+            <li><a href="{{ path('infocorp_sintuf_homepage') }}">Início</a></li>
             <li><a href="#">Associe-se</a></li>
             <li><a href="#">Saúde</a></li>
             <li><a href="#">Clubes</a></li>
             <li><a href="#">Convênios</a></li>
-            <li><a href="{{ path('infocorp_affemat_fale_conosco') }}">Contato</a></li>
+            <li><a href="{{ path('infocorp_sintuf_fale_conosco') }}">Contato</a></li>
           </ul>
         </div>
       </header>

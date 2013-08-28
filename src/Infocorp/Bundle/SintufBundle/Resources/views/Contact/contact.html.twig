@@ -1,4 +1,4 @@
-{% extends 'InfocorpAffematBundle::layout.html.twig' %}
+{% extends 'InfocorpSintufBundle::layout.html.twig' %}
 
 {% block content %}
   {% if app.session.flashbag.has('success') %}
@@ -21,7 +21,7 @@
 
   <div class="row-fluid">
     <div class="well">
-      <form action="{{ path('infocorp_affemat_fale_conosco') }}" method="POST" class="form-horizontal">
+      <form action="{{ path('infocorp_sintuf_fale_conosco') }}" method="POST" class="form-horizontal">
         <div class="control-group">
           <label class="control-label">Nome</label>
           <div class="controls">
