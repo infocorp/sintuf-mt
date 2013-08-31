@@ -49,6 +49,7 @@ class NewsController extends Controller
         $newsManager = $em->getRepository('ApplicationSonataNewsBundle:Post');
 
         $news = $newsManager->findOneBy(array('slug' => $slug, 'enabled' => 1));
+        $form = $this->createForm($this->get('sonata.news.form.type.comment'));
 
         if (!$news) {
         	throw new NotFoundHttpException('Notícia não encontrada');
@@ -56,6 +57,7 @@ class NewsController extends Controller
 
         return $this->render('InfocorpSintufBundle:News:view.html.twig', array(
         	'news' => $news,
+        	'form' => $form->createView(),
     	));
     }
 }

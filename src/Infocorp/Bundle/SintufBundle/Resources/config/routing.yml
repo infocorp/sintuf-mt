@@ -1,21 +1,21 @@
 infocorp_sintuf_homepage:
-    pattern:  /
+    path:  /
     defaults: { _controller: InfocorpSintufBundle:Home:index }
 
 infocorp_sintuf_noticias:
-    pattern: /noticias
+    path: /noticias
     defaults: { _controller: InfocorpSintufBundle:News:index }
 
 infocorp_sintuf_noticia:
-    pattern: /noticias/{slug}
+    path: /noticias/{slug}
     defaults: { _controller: InfocorpSintufBundle:News:view }
 
 infocorp_sintuf_noticias_categoria:
-    pattern: /noticias/categoria/{slug}
+    path: /noticias/categoria/{slug}
     defaults: { _controller: InfocorpSintufBundle:News:category }
 
 infocorp_sintuf_fale_conosco:
-    pattern: /fale-conosco
+    path: /fale-conosco
     defaults: { _controller: InfocorpSintufBundle:Contact:email }
 
 infocorp_sintuf_slider:
@@ -27,13 +27,18 @@ infocorp_sintuf_institutional_list:
     defaults: { _controller: InfocorpSintufBundle:Institutional:list }
 
 infocorp_sintuf_institutional_view:
-    pattern: /institucional/{slug}
+    path: /institucional/{slug}
     defaults: { _controller: InfocorpSintufBundle:Institutional:view }
 
 infocorp_sintuf_galeria:
-    pattern: /galerias
+    path: /galerias
     defaults: { _controller: InfocorpSintufBundle:Gallery:index }
 
 infocorp_sintuf_galeria_view:
-    pattern: /galerias/{id}
+    path: /galerias/{id}
     defaults: { _controller: InfocorpSintufBundle:Gallery:view }
+
+infocorp_news_add_comment:
+    path: /add-comment/{id}
+    defaults: { _controller: ApplicationSonataNewsBundle:ApplicationPost:addComment }
+    methods: [POST]

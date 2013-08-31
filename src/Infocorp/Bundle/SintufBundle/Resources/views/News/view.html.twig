@@ -1,13 +1,50 @@
-{% extends 'InfocorpAffematBundle::layout.html.twig' %}
+{% extends 'InfocorpSintufBundle::layout.html.twig' %}
 {% block content %}
 
-	<article>
-	    <h1 class="title-new">
-	    	{{ news.title }}
-	    </h1>
+<article>
+ <h1 class="title-new">
+  {{ news.title }}
+</h1>
 
-	    <div class="content-new">
-	    	{{ news.content | raw }}
-		</div>	    
-    </article>
+<div class="content-new">
+  {{ news.content | raw }}
+</div>	    
+</article>
+
+{# Comentários #}
+<section class="comments">
+  <form action="{{ path('infocorp_news_add_comment', {id: news.id}) }}" method="POST" class="form-horizontal">
+    {% if form %}
+      {{ form_errors(form) }}
+    {% endif %}
+
+    {{ form_widget(form) }}
+
+    <!-- <div class="control-group">
+      <label for="name" class="control-label">Nome</label>
+      <div class="controls">
+        <input type="text" name="name" required>
+      </div>
+    
+      <label for="email" class="control-label">Email</label>
+      <div class="controls">
+        <input type="email" name="email" required>
+      </div>
+    
+      <label for="url" class="control-label">Website (opcional)</label>
+      <div class="controls">
+        <input type="text" name="url">
+      </div>
+    
+      <label for="message" class="control-label">Comentário</label>
+      <div class="controls">
+        <textarea name="message" cols="50" rows="20" required></textarea>
+      </div>
+    </div> -->
+    
+    <div class="form-actions">
+      <input type="submit" value="Comente!" class="btn btn-large btn-primary">
+    </div>
+  </form>
+</section>
 {% endblock %}
