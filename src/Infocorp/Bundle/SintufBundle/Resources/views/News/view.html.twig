@@ -19,13 +19,37 @@
       {{ form_errors(form) }}
     {% endif %}
 
-    {{ form_row(form.name) }}
-      
-    {{ form_row(form.email) }}
+    <div class="control-group">
+      {{ form_label(form.name, 'Nome', {'attr': {'class': 'control-label'}}) }}
+      <div class="controls">
+        {{ form_widget(form.name, {'attr': {'class': 'control_group'}}) }}
+        {{ form_errors(form.name) }}
+      </div>
+    </div>
 
-    {{ form_row(form.url) }}
+    <div class="control-group">
+      {{ form_label(form.email, 'Email', {'attr': {'class': 'control-label'}}) }}
+      <div class="controls">
+        {{ form_widget(form.email, {'attr': {'class': 'control_group'}}) }}
+        {{ form_errors(form.email) }}
+      </div>
+    </div>
 
-    {{ form_row(form.message) }}
+    <div class="control-group">
+      {{ form_label(form.url, 'Website (opcional)', {'attr': {'class': 'control-label'}}) }}
+      <div class="controls">
+        {{ form_widget(form.url, {'attr': {'class': 'control_group'}}) }}
+        {{ form_errors(form.url) }}
+      </div>
+    </div>
+
+    <div class="control-group">
+      {{ form_label(form.message, 'Comentário', {'attr': {'class': 'control-label'}}) }}
+      <div class="controls">
+        {{ form_widget(form.message, {'attr': {'class': 'control_group'}}) }}
+        {{ form_errors(form.message) }}
+      </div>
+    </div>
 
     {{ form_rest(form) }}
     <div class="form-actions">

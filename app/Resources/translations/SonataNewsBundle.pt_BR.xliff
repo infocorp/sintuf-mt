@@ -100,7 +100,7 @@
             </trans-unit>
             <trans-unit id="title_leave_comment">
                 <source>title_leave_comment</source>
-                <target>Adicionar comentário</target>
+                <target>Deixe um comentário</target>
             </trans-unit>
             <trans-unit id="mail_title_comment_notification">
                 <source>mail_title_comment_notification</source>
@@ -314,6 +314,22 @@ Links rapidos para moderação :
             <trans-unit id="link_next_page">
                 <source>link_next_page</source>
                 <target>Próxima página</target>
+            </trans-unit>
+            <trans-unit id="comment_name">
+                <source>comment_name</source>
+                <target>Nome</target>
+            </trans-unit>
+            <trans-unit id="comment_email">
+                <source>comment_email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="comment_url">
+                <source>comment_url</source>
+                <target>Website (opcional)</target>
+            </trans-unit>
+            <trans-unit id="comment_message">
+                <source>comment_message</source>
+                <target>Comentário</target>
             </trans-unit>
         </body>
     </file>
