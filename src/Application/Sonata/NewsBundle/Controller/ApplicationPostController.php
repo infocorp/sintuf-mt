@@ -22,11 +22,10 @@ class ApplicationPostController extends PostController
         ));
 
         if (!$post) {
-            throw new NotFoundHttpException(sprintf('Post (%d) not found', $id));
+            throw new NotFoundHttpException(sprintf('Notícia (%d) não encontrada', $id));
         }
 
         if (!$post->isCommentable()) {
-            // todo add notice
             return new RedirectResponse($this->generateUrl('infocorp_sintuf_noticia', array(
                 'slug'  => $post->getSlug(),
             )));
@@ -41,7 +40,6 @@ class ApplicationPostController extends PostController
             $this->getCommentManager()->save($comment);
             $this->get('sonata.news.mailer')->sendCommentNotification($comment);
 
-            // todo : add notice
             return new RedirectResponse($this->generateUrl('infocorp_sintuf_noticia', array(
                 'slug'  => $post->getSlug(),
             )));

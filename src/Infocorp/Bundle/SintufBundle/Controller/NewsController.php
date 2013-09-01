@@ -49,7 +49,7 @@ class NewsController extends Controller
         $newsManager = $em->getRepository('ApplicationSonataNewsBundle:Post');
 
         $news = $newsManager->findOneBy(array('slug' => $slug, 'enabled' => 1));
-        $form = $this->createForm($this->get('sonata.news.form.type.comment'));
+        $form = $this->get('form.factory')->createNamed('comment', 'sonata_post_comment');
 
         if (!$news) {
         	throw new NotFoundHttpException('Notícia não encontrada');

@@ -13,38 +13,24 @@
 
 {# Comentários #}
 <section class="comments">
-  <form action="{{ path('infocorp_news_add_comment', {id: news.id}) }}" method="POST" class="form-horizontal">
+  {# Renderiza formulario com ajuda dos helpers do symfony, referencia: http://symfony.com/doc/current/reference/forms/twig_reference.html #}
+  {{ form_start(form, {'action': path('infocorp_news_add_comment', {id: news.id}), 'attr': {'class': 'form-horizontal'}}) }}
     {% if form %}
       {{ form_errors(form) }}
     {% endif %}
 
-    {{ form_widget(form) }}
+    {{ form_row(form.name) }}
+      
+    {{ form_row(form.email) }}
 
-    <!-- <div class="control-group">
-      <label for="name" class="control-label">Nome</label>
-      <div class="controls">
-        <input type="text" name="name" required>
-      </div>
-    
-      <label for="email" class="control-label">Email</label>
-      <div class="controls">
-        <input type="email" name="email" required>
-      </div>
-    
-      <label for="url" class="control-label">Website (opcional)</label>
-      <div class="controls">
-        <input type="text" name="url">
-      </div>
-    
-      <label for="message" class="control-label">Comentário</label>
-      <div class="controls">
-        <textarea name="message" cols="50" rows="20" required></textarea>
-      </div>
-    </div> -->
-    
+    {{ form_row(form.url) }}
+
+    {{ form_row(form.message) }}
+
+    {{ form_rest(form) }}
     <div class="form-actions">
       <input type="submit" value="Comente!" class="btn btn-large btn-primary">
     </div>
-  </form>
+  {{ form_end(form, {'render_rest': false}) }}
 </section>
 {% endblock %}
