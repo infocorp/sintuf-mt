@@ -1,6 +1,7 @@
 services:
     application.sonata.news.mailer:
         class: Application\Sonata\NewsBundle\Mail\CommentEmailNotification
+        alias: application_news_mailer
         arguments: ['@mailer', '@templating', '@application.sonata.mail.manager', '%mailer_user%']
 
     application.sonata.mail.manager:
