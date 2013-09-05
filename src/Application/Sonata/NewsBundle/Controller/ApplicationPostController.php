@@ -38,8 +38,7 @@ class ApplicationPostController extends PostController
             $comment = $form->getData();
 
             $this->getCommentManager()->save($comment);
-            // Escrever nova funcionalidade de notificação de email para moderadores de comentários
-            // $this->get('sonata.news.mailer')->sendCommentNotification($comment);
+            $this->get('application.sonata.news.mailer')->sendCommentNotification($comment);
 
             return new RedirectResponse($this->generateUrl('infocorp_sintuf_noticia', array(
                 'slug'  => $post->getSlug(),

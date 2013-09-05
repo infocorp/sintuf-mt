@@ -1,0 +1,8 @@
+services:
+    application.sonata.news.mailer:
+        class: Application\Sonata\NewsBundle\Mail\CommentEmailNotification
+        arguments: ['@mailer', '@templating', '@application.sonata.mail.manager', '%mailer_user%']
+
+    application.sonata.mail.manager:
+        class: Application\Sonata\NewsBundle\Mail\MailManager
+        arguments: ['@service_container']
