@@ -8,9 +8,7 @@ class HomeController extends Controller
 {
     public function indexAction()
     {
-        
         return $this->render('InfocorpSintufBundle:Home:index.html.twig');
-
     }
 
 }

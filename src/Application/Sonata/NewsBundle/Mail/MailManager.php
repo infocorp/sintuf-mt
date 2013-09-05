@@ -24,7 +24,13 @@ class MailManager
 
         $emailsTo = array();
         foreach ($commentModerators as $moderator) {
-            $emailsTo[] = $moderator->getEmail();
+            if ($moderator->hasRole('ROLE_SUPER_ADMIN')
+                || $moderator->hasRole('ROLE_ADMIN')
+                || $moderator->hasRole('ROLE_SONATA_ADMIN')
+                || $moderator->hasRole('ROLE_SONATA_NEWS_ADMIN_COMMENT_EDIT')
+            ) {
+                $emailsTo[] = $moderator->getEmail();
+            }
         }
 
         return $emailsTo;
