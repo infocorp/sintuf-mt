@@ -38,7 +38,7 @@ class ApplicationPostController extends PostController
             $comment = $form->getData();
 
             $this->getCommentManager()->save($comment);
-            $this->get('application_news_mailer')->sendCommentNotification($comment);
+            $this->get('application.sonata.news.mailer')->sendCommentNotification($comment);
 
             return new RedirectResponse($this->generateUrl('infocorp_sintuf_noticia', array(
                 'slug'  => $post->getSlug(),

@@ -1,0 +1,8 @@
+Novo comentário de {{ comment.name }}
+
+Comentário: 
+{{ comment.message }}
+
+{% autoescape false %}
+Moderar comentário: (Copie a URL ao lado para moderar o comentário) {{ url('admin_sonata_news_comment_edit', {'id': comment.id}, true) }}
+{% endautoescape %}

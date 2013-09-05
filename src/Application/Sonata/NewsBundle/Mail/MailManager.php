@@ -1,11 +1,13 @@
 <?php
 namespace Application\Sonata\NewsBundle\Mail;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
 class MailManager
 {
     protected $container;
 
-    public function __construct(Container $container)
+    public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
     }
@@ -18,7 +20,7 @@ class MailManager
     public function getEmails()
     {
         $userManager = $this->container->get('fos_user.user_manager');
-        $commentModerators = $userManager->findUsers());
+        $commentModerators = $userManager->findUsers();
 
         $emailsTo = array();
         foreach ($commentModerators as $moderator) {

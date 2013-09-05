@@ -2,6 +2,8 @@
 namespace Application\Sonata\NewsBundle\Mail;
 
 use Sonata\NewsBundle\Mailer\MailerInterface;
+use Sonata\NewsBundle\Model\CommentInterface;
+use Symfony\Component\Templating\EngineInterface;
 
 class CommentEmailNotification implements MailerInterface 
 {
@@ -21,6 +23,9 @@ class CommentEmailNotification implements MailerInterface
         $this->mailFrom = $mailFrom;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function sendCommentNotification(CommentInterface $comment)
     {
         $rendered = $this->templating->render('ApplicationSonataNewsBundle:Mail:notification.txt.twig', array(
@@ -29,7 +34,7 @@ class CommentEmailNotification implements MailerInterface
 
         $message = \Swift_Message::newInstance()
             ->setSubject('Sintuf-MT - Novo comentário')
-            ->setFrom($this->emails['from'])
+            ->setFrom($this->mailFrom)
             ->setTo($this->mailManager->getEmails())
             ->setBody($rendered);
 

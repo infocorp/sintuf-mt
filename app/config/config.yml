@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: fos_user.yml }
     - { resource: @InfocorpSintufBundle/Resources/config/services.yml }
+    - { resource: @ApplicationSonataNewsBundle/Resources/config/mailer.yml }
 
     # Sonata Bundles
     - { resource: sonata/sonata_admin.yml }
