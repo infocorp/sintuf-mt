@@ -10,10 +10,11 @@ class ContactController extends Controller
     public function emailAction(Request $request)
     {
         if ($request->isMethod('POST')) {
+        	$emailTo = $this->container->getParameter('mailer_user');
             $message = \Swift_Message::newInstance()
                 ->setSubject('Formulário de contato - Sintuf')
                 ->setFrom($request->request->get('email'))
-                ->setTo('eduardomrb@gmail.com')
+                ->setTo($emailTo)
                 ->setBody(
                     $this->renderView(
                         'InfocorpSintufBundle:Email:email.txt.twig', array(
