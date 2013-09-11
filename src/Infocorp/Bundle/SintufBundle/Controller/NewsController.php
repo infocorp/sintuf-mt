@@ -60,4 +60,16 @@ class NewsController extends Controller
         	'form' => $form->createView(),
     	));
     }
+
+    public function homeListAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $newsManager = $em->getRepository('ApplicationSonataNewsBundle:Post');
+
+        $news = $newsManager->findLastNews();
+
+        return $this->render('InfocorpSintufBundle:News:home_list.html.twig', array(
+            'news' => $news,
+        ));
+    }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt_BR">
 <head>
-  <title>{% block title %}Affemat{% endblock %}</title>
+  <title>{% block title %}SINTUF-MT{% endblock %}</title>
   {% block stylesheets %}
     {% stylesheets 
       'bundles/infocorpsintuf/css/style.css'
@@ -37,21 +37,24 @@
       <header>
         <div class="header_top">
           <div class="header_desc">
-            <h1> Associação dos Funcionários da Fazenda do Estado de Mato Grosso</h1>
+            <h1>Sindicato dos Trabalhadores Técnico-Administrativos em Educação da Universidade Federal de Mato Grosso</h1>
           </div>
           <div class="logo">
-            <a href="{{ path('infocorp_sintuf_homepage') }}" title="AFFEMAT" alt="AFFEMAT"><img src="{{ asset('bundles/infocorpsintuf/images/logo.png') }}" title="AFFEMAT" alt="AFFEMAT"></a>
+            <a href="{{ path('infocorp_sintuf_homepage') }}" title="SINTUF-MT" alt="SINTUF-MT"><img src="{{ asset('bundles/infocorpsintuf/images/logo1.png') }}" title="SINTUF-MT" alt="SINTUF-MT"></a>
           </div>
         </div>
         <div class="menu_sup">
           <ul>
-            <li><a href="{{ path('infocorp_sintuf_homepage') }}">Início</a></li>
-            <li><a href="#">Associe-se</a></li>
-            <li><a href="#">Saúde</a></li>
-            <li><a href="#">Clubes</a></li>
+            <li><a href="{{ path('infocorp_sintuf_homepage') }}">Home</a></li>
+            <li><a href="#">Comunicação</a></li>
+            <li><a href="#">Jurídico</a></li>
             <li><a href="#">Convênios</a></li>
+            <li><a href="#">Sindical</a></li>
             <li><a href="{{ path('infocorp_sintuf_fale_conosco') }}">Contato</a></li>
           </ul>
+        </div>
+        <div class="back_slider">
+          {{ render(url('infocorp_sintuf_slider')) }}
         </div>
       </header>
     {% endblock %}
@@ -61,14 +64,10 @@
     {% endblock %}
     </div>
     
-    {% block media_social %}
-      <div id="media_social">
-        <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAffemat%2F201137789921676&amp;width=900&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=289289821083335" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:900px; height:258px;" allowTransparency="true"></iframe>
-      </div>
-    {% endblock %}
 
-    {% block rodape %}
-      <div id="rodape">rodape</div>
+
+   {% block rodape %}
+      <div id="rodape"></div>
     {% endblock %}
 </body>
 </html>

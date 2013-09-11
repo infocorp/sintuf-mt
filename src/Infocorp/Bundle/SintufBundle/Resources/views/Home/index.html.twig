@@ -1,247 +1,61 @@
 {% extends 'InfocorpSintufBundle::layout.html.twig' %}
 {% block content %}
 
-{{ render(url('infocorp_sintuf_slider')) }}
 
-{% block noticias %}
-  <div id="noticias">
-    <div class="nav_noticias">
-      <div class="tabbable"> <!-- Only required for left/right tabs -->
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="#tab1" data-toggle="tab">Notícias</a></li>
-          <li><a href="#tab2" data-toggle="tab">Aposentado e Pensionista</a></li>
-          <li><a href="#tab3" data-toggle="tab">Galerias</a></li>
-        </ul>
-        <div class="tab-content">
-          <a class="btn_mais_noticias" href="#">Mais notícias</a>
-          <div class="tab-pane active" id="tab1">
-            <ul class="nav_tab_right">
-              <li>
-                <a href="#"><img src="/bundles/infocorpsintuf/images/noticia.jpg">
-                <strong>Existem muitas variações disponíveis de passagens de Lorem Ipsum, mas a maioria sof</strong>
-                </a>
-                <p>Ao contrário do que se acredita, Lorem Ipsum não é simplesmente um texto randômico.</p>
-              </li>
-            </ul>
-            <ul class="nav_tab_left">
-              <li><a title="AFFEMAT | Notícias" href="#">É um fato conhecido de todos que um leitor se...</a></li>
-              <li><a title="AFFEMAT | Notícias" href="#">É um fato conhecido de todos que um leitor se...</a></li>
-              <li><a title="AFFEMAT | Notícias" href="#">É um fato conhecido de todos que um leitor se...</a></li>
-              <li><a title="AFFEMAT | Notícias" href="#">É um conhecido de todos que um leitor se...</a></li>
-              <li><a title="AFFEMAT | Notícias" href="#">É um fato conhecido de todos que um leitor se...</a></li>
-              <li><a title="AFFEMAT | Notícias" href="#">É um fato conhecido de que um leitor se...</a></li>
-              <li><a title="AFFEMAT | Notícias" href="#">É um fato conhecido de todos que um leitor se...</a></li>
-            </ul>
-          </div>
-          <div class="tab-pane" id="tab2">
-            <p>Aqui será exibido notícias sobre aposentados e pensionistas</p>
-          </div>
-          <div class="tab-pane" id="tab3">
-            <div id="parceiros">
-    <div class="container">
-      <div id="myCarousel3" class="carousel slide">
-        <!-- Carousel items -->
-        <div class="carousel-inner">
-        <div class="item active">
-        <div class="row text-center">
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-          
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-          
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-          
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-        </div>
-        </div>
-        
-        <div class="item">
-        <div class="row text-center">
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-          
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-          
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-          
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-        </div>
-        </div>
-      </div><!-- /INNER-->  
-            <!-- Carousel nav -->
-        <a class="carousel-control left" href="#myCarousel3" data-slide="prev"><i class="icon-chevron-left"></i></a>
-        <a class="carousel-control right" href="#myCarousel3" data-slide="next"><i class="icon-chevron-right"></i></a>  
-      </div>
-    </div><!-- /SLIDER PARCEIROS -->
 
-  </div><!-- /PARCEIROS -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-{% endblock %}
+
 
 {% block servicos %}
-  <div id="servicos">
-    <ul class="nav_serv">
-      <li class="nav_serv_principal">
-        
-        {# Renderiza itens do menu institucional #}
-        {{ render(url('infocorp_sintuf_institutional_list')) }}
-
-        <ul class="nav_comunicacao">
-            <li class="servicos_com"><strong>Comunicação</strong></li>
-            <li><a href="{{ path('infocorp_sintuf_noticias') }}">Notícias</a></li>
-            <li><a  href="#">Vídeos</a></li>
-            <li><a  href="#">Galerias</a></li>
-            <li><a  href="#">Eventos</a></li>
-            <li><a  href="#">Publicações</a></li>
-        </ul>
-
-        <ul class="nav_servicos">
-            <li class="servicos_serv"><strong>Serviços</strong></li>
-            <li><a  href="#">Convênios</a></li>
-            <li><a  href="#">Filiação</a></li>
-            <li><a  href="#">Intranet</a></li>
-            <li><a  href="#">Classificados</a></li>
-        </ul>
-      </li>
+  <div id="utilities">
+    <ul class="nav">
+      <li class="nav_utilities"><a href="{{ path('infocorp_sintuf_homepage') }}" title="SINTUF-MT" alt="SINTUF-MT"><img src="{{ asset('bundles/infocorpsintuf/images/cadastro.png') }}" title="SINTUF-MT" alt="SINTUF-MT"></a></li>
+      <li class="nav_utilities"><a href="{{ path('infocorp_sintuf_homepage') }}" title="SINTUF-MT" alt="SINTUF-MT"><img src="{{ asset('bundles/infocorpsintuf/images/downloads.png') }}" title="SINTUF-MT" alt="SINTUF-MT"></a></li>
+      <li class="nav_utilities"><a href="{{ path('infocorp_sintuf_homepage') }}" title="SINTUF-MT" alt="SINTUF-MT"><img src="{{ asset('bundles/infocorpsintuf/images/convenios.png') }}" title="SINTUF-MT" alt="SINTUF-MT"></a></li>
+      <li class="nav_utilities"><a href="{{ path('infocorp_sintuf_homepage') }}" title="SINTUF-MT" alt="SINTUF-MT"><img src="{{ asset('bundles/infocorpsintuf/images/direcao.png') }}" title="SINTUF-MT" alt="SINTUF-MT"></a></li>
     </ul>
   </div>
 {% endblock %}
 
-{% block parceiros %}
-  <div id="parceiros">
-    <div class="container">
-      <div id="myCarousel2" class="carousel slide">
-        <!-- Carousel items -->
-        <div class="carousel-inner">
-        <div class="item active">
-        <div class="row text-center">
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-          
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-          
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-          
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-        </div>
-        </div>
-        
-        <div class="item">
-        <div class="row text-center">
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-          
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-          
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-          
-          <!-- ITEM-->
-            <div class="span3">
-              <div class="thumbnail product-item">
-                <a href="#"><img src="/bundles/infocorpsintuf/images/parceiros.png"></a>
-              </div>
-            </div>
-          <!-- ITEM-->
-        </div>
-        </div>
-      </div><!-- /INNER-->  
-            <!-- Carousel nav -->
-        <a class="carousel-control left" href="#myCarousel2" data-slide="prev"><i class="icon-chevron-left"></i></a>
-        <a class="carousel-control right" href="#myCarousel2" data-slide="next"><i class="icon-chevron-right"></i></a>  
-      </div>
-    </div><!-- /SLIDER PARCEIROS -->
+{% block noticias %}
+  <div id="news">
+    <span>Notícias</span>
+    <h3>Dolor rhoncus, amet in, turpis dapibus!</h3>
+    <p class="destaque">Auctor augue adipiscing odio phasellus phasellus, rhoncus ut odio in? Montes parturient duis et, pulvinar? Enim nec tortor, nunc nunc! Elementum diam, nec cursus facilisis tristique est montes vut nunc, placerat</p>
 
-  </div><!-- /PARCEIROS -->
+    <ul class="news_block">
+      <li class="content_news">
+        <h3>Dolor rhoncus, amet in, turpis dapibus!</h3>
+        <img src="{{ asset('bundles/infocorpsintuf/images/slide-01.jpg') }}" title="SINTUF-MT" alt="SINTUF-MT">
+        <p>Auctor augue adipiscing odio phasellus phasellus, rhoncus ut odio in? Montes parturient duis et, pulvinar? Enim nec tortor, nunc nunc! Elementum diam, nec cursus facilisis tristique est montes vut nunc, placerat</p>
+      </li>
+      <li class="content_news">
+        <h3>Dolor rhoncus, amet in, turpis dapibus!</h3>
+        <img src="{{ asset('bundles/infocorpsintuf/images/slide-01.jpg') }}" title="SINTUF-MT" alt="SINTUF-MT">
+        <p>Auctor augue adipiscing odio phasellus phasellus, rhoncus ut odio in? Montes parturient duis et, pulvinar? Enim nec tortor, nunc nunc! Elementum diam, nec cursus facilisis tristique est montes vut nunc, placerat</p>
+      </li>
+      <li class="content_news">
+        <h3>Dolor rhoncus, amet in, turpis dapibus!</h3>
+        <img src="{{ asset('bundles/infocorpsintuf/images/slide-01.jpg') }}" title="SINTUF-MT" alt="SINTUF-MT">
+        <p>Auctor augue adipiscing odio phasellus phasellus, rhoncus ut odio in? Montes parturient duis et, pulvinar? Enim nec tortor, nunc nunc! Elementum diam, nec cursus facilisis tristique est montes vut nunc, placerat</p>
+      </li>
+      <li class="content_news">
+        <h3>Dolor rhoncus, amet in, turpis dapibus!</h3>
+        <img src="{{ asset('bundles/infocorpsintuf/images/slide-01.jpg') }}" title="SINTUF-MT" alt="SINTUF-MT">
+        <p>Auctor augue adipiscing odio phasellus phasellus, rhoncus ut odio in? Montes parturient duis et, pulvinar? Enim nec tortor, nunc nunc! Elementum diam, nec cursus facilisis tristique est montes vut nunc, placerat</p>
+      </li>
+    </ul>
+
+  </div>
+{% endblock %}
+
+     {% block media_social %}
+      <div id="media_social">
+        <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FSintufMT&amp;width=292&amp;height=590&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=true&amp;show_border=true&amp;appId=289289821083335" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:590px;" allowTransparency="true"></iframe>
+      </div>
+    {% endblock %}
+
+{% block parceiros %}
+  
 {% endblock %}
 
 {% endblock %}

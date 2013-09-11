@@ -10,6 +10,10 @@ infocorp_sintuf_noticia:
     path: /noticias/{slug}
     defaults: { _controller: InfocorpSintufBundle:News:view }
 
+infocorp_sintuf_noticias_list_home:
+    path: /noticias-list-home
+    defaults: { _controller: InfocorpSintufBundle:News:homeList }
+
 infocorp_sintuf_noticias_categoria:
     path: /noticias/categoria/{slug}
     defaults: { _controller: InfocorpSintufBundle:News:category }
