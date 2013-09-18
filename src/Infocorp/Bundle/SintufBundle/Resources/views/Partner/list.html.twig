@@ -1,0 +1,9 @@
+{% extends 'InfocorpSintufBundle::layout.html.twig' %}
+{% block content %}
+<ul class="nav_institucional">
+  <li class="servicos_inst"><strong>Parceiros</strong></li>
+  {% for partner in partners %}
+    <li><a href="{{ path('infocorp_sintuf_partner_view', {slug: partner.slug}) }}">{{ partner.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

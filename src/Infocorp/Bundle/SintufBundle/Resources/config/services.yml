@@ -26,6 +26,12 @@ services:
             - { name: sonata.admin, manager_type: orm, group: Site, label: Convênio }
         arguments: [null, Infocorp\Bundle\SintufBundle\Entity\Covenant, null]
 
+    sonata.admin.partner:
+        class: Infocorp\Bundle\SintufBundle\Admin\PartnerAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Site, label: Parceiros }
+        arguments: [null, Infocorp\Bundle\SintufBundle\Entity\Partner, null]
+
     sintuf.form.type.affiliate:
         class: Infocorp\Bundle\SintufBundle\Form\AffiliateType
         tags: 

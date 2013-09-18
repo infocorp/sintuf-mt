@@ -66,3 +66,11 @@ infocorp_sintuf_covenant_list:
 infocorp_sintuf_covenant_view:
     path: /convenios/{slug}
     defaults: { _controller: InfocorpSintufBundle:Covenant:view }
+
+infocorp_sintuf_partner_list:
+    path: /parceiros
+    defaults: { _controller: InfocorpSintufBundle:Partner:list }
+
+infocorp_sintuf_partner_view:
+    path: /parceiros/{slug}
+    defaults: { _controller: InfocorpSintufBundle:Partner:view }

@@ -1,0 +1,30 @@
+{% extends 'InfocorpSintufBundle::layout.html.twig' %}
+{% block content %}
+  
+
+   	<div class="span2">
+      <ul class="nav nav-list">
+        <li class="nav-header">Parceiros</li>
+          <li>
+              {{ partner.title }}
+          </li>
+      </ul>
+    </div>
+
+	<div class="span10">
+		<article>
+		    <h1 class="title-direction">
+		    	{{ partner.title }}
+		    </h1>
+
+        <div class="image-direction">
+          {% thumbnail partner.image, 'big' %}
+      </div>  
+
+		    <div class="content-direction">
+		    	{{ partner.content | raw }}
+			</div>	    
+	    </article>
+	</div>
+
+{% endblock %}
