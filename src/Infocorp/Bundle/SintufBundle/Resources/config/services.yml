@@ -14,6 +14,12 @@ services:
             - { name: sonata.admin, manager_type: orm, group: Site, label: Institucional }
         arguments: [null, Infocorp\Bundle\SintufBundle\Entity\Institutional, null]
 
+    sonata.admin.direction:
+        class: Infocorp\Bundle\SintufBundle\Admin\DirectionAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Site, label: Direção }
+        arguments: [null, Infocorp\Bundle\SintufBundle\Entity\Direction, null]
+
     sintuf.form.type.affiliate:
         class: Infocorp\Bundle\SintufBundle\Form\AffiliateType
         tags: 

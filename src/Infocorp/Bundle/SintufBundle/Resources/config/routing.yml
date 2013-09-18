@@ -34,6 +34,14 @@ infocorp_sintuf_institutional_view:
     path: /institucional/{slug}
     defaults: { _controller: InfocorpSintufBundle:Institutional:view }
 
+infocorp_sintuf_direction_list:
+    path: /direcao
+    defaults: { _controller: InfocorpSintufBundle:Direction:list }
+
+infocorp_sintuf_direction_view:
+    path: /direcao/{slug}
+    defaults: { _controller: InfocorpSintufBundle:Direction:view }
+
 infocorp_sintuf_galeria:
     path: /galerias
     defaults: { _controller: InfocorpSintufBundle:Gallery:index }
