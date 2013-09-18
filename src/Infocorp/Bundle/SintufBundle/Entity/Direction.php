@@ -64,6 +64,14 @@ class Direction
      */
     private $content;
 
+    /**
+     * @var string
+     *
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id")
+     */
+    private $image;
+
 
     /**
      * Get id
@@ -209,5 +217,28 @@ class Direction
     public function getContentFormatter()
     {
     	return $this->contentFormatter;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Featured
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

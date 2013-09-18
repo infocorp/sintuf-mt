@@ -15,6 +15,7 @@ class DirectionAdmin extends Admin
     {
         return $formMapper
             ->add('title', null, array('label' => 'Título'))
+            ->add('image', 'sonata_type_model_list', array('label' => 'Imagem (1500x550)'))
             ->add('enabled', null, array(
                 'label' => 'Habilitado',
                 'attr' => array(
@@ -39,6 +40,7 @@ class DirectionAdmin extends Admin
     {
         return $showMapper
             ->add('title', null, array('label' => 'Título'))
+            ->add('image', null, array('label' => 'Imagem'))
             ->add('enabled', null, array('label' => 'Habilitado'))
             ->add('content', null, array('safe' => true))
         ;
