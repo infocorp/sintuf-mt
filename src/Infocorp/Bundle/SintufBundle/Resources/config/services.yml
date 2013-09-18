@@ -30,3 +30,9 @@ services:
         class: Infocorp\Bundle\SintufBundle\Form\AffiliateType
         tags: 
             - { name: form.type, alias: form_affiliate }
+
+    sonata.admin.menu:
+        class: Infocorp\Bundle\SintufBundle\Admin\MenuAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Site, label: Menu }
+        arguments: [null, Infocorp\Bundle\SintufBundle\Entity\Menu, null]
