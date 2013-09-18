@@ -1,0 +1,9 @@
+{% extends 'InfocorpSintufBundle::layout.html.twig' %}
+{% block content %}
+<ul class="nav_institucional">
+  <li class="servicos_inst"><strong>Direção</strong></li>
+  {% for direction in directions %}
+    <li><a href="{{ path('infocorp_sintuf_direction_view', {slug: direction.slug}) }}">{{ direction.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

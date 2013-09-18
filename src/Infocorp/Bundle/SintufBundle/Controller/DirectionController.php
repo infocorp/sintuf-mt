@@ -13,10 +13,10 @@ class DirectionController extends Controller
         $em = $this->getDoctrine()->getManager();
         $instManager = $em->getRepository('InfocorpSintufBundle:Direction');
 
-        $direction = $instManager->findBy(array('enabled' => 1));
+        $directions = $instManager->findBy(array('enabled' => 1));
 
         return $this->render('InfocorpSintufBundle:Direction:list.html.twig', array(
-            'direction' => $directions,
+            'directions' => $directions,
         ));
     }
 
@@ -35,6 +35,8 @@ class DirectionController extends Controller
             throw new NotFoundHttpException('Diretor não encontrado');
         }
 
-        return $this->render('InfocorpSintufBundle:Direction:view.html.twig');
+        return $this->render('InfocorpSintufBundle:Direction:view.html.twig', array(
+            'director' => $directionContent,
+        ));
     }
 }

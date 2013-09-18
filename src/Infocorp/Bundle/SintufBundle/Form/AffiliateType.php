@@ -9,7 +9,7 @@ class AffiliateType extends AbstractType
     public function buildForm(FormBuilderInterface $formBuilder, array $options)
     {
         $formBuilder
-            ->add('registration')
+            ->add('registration', 'money', array('label' => 'Matrícula'))
             ->add('name')
             ->add('address')
             ->add('district')

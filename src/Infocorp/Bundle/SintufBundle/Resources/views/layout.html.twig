@@ -27,7 +27,7 @@
             <a href="{{ path('infocorp_sintuf_homepage') }}" title="SINTUF-MT" alt="SINTUF-MT"><img src="{{ asset('bundles/infocorpsintuf/images/logo1.png') }}" title="SINTUF-MT" alt="SINTUF-MT"></a>
           </div>
         </div>
-        {{ knp_menu_render('InfocorpSintufBundle:MenuBuilder:testMenu') }}
+        <!-- {{ knp_menu_render('InfocorpSintufBundle:MenuBuilder:testMenu') }} -->
         <div class="menu_sup">
           <ul>
             <li><a href="{{ path('infocorp_sintuf_homepage') }}">Home</a></li>
@@ -38,9 +38,7 @@
             <li><a href="{{ path('infocorp_sintuf_fale_conosco') }}">Contato</a></li>
           </ul>
         </div>
-        <div class="back_slider">
-          {{ render(url('infocorp_sintuf_slider')) }}
-        </div>
+        
       </header>
     {% endblock %}
 
