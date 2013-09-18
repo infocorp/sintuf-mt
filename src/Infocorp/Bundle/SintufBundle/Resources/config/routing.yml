@@ -27,7 +27,7 @@ infocorp_sintuf_slider:
     defaults: { _controller: InfocorpSintufBundle:Slide:index }
 
 infocorp_sintuf_institutional_list:
-    path: /institucional-list
+    path: /institucional
     defaults: { _controller: InfocorpSintufBundle:Institutional:list }
 
 infocorp_sintuf_institutional_view:
@@ -46,3 +46,7 @@ infocorp_news_add_comment:
     path: /add-comment/{id}
     defaults: { _controller: ApplicationSonataNewsBundle:ApplicationPost:addComment }
     methods: [POST]
+
+sintuf_affiliate:
+    path: /afilie-se
+    defaults: { _controller: InfocorpSintufBundle:Affiliate:index }

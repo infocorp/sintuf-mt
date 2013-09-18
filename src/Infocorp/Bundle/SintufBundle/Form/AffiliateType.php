@@ -6,14 +6,51 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class AffiliateType extends AbstractType
 {
-    public function buildForm(FormBuilderIntrface $formBuilder, array $options)
+    public function buildForm(FormBuilderInterface $formBuilder, array $options)
     {
         $formBuilder
-            ->
+            ->add('registration')
+            ->add('name')
+            ->add('address')
+            ->add('district')
+            ->add('email')
+            ->add('phone')
+            ->add('city')
+            ->add('state')
+            ->add('city')
+            ->add('birthCity')
+            ->add('birthState')
+            ->add('birthDate')
+            ->add('sex')
+            ->add('civilStatus')
+            ->add('associateDate')
+            ->add('filiationFather')
+            ->add('filiationMother')
+            ->add('scholarity')
+            ->add('registrationId')
+            ->add('expeditionOrgan')
+            ->add('expeditionDate')
+            ->add('cpf')
+            ->add('ctps')
+            ->add('pis')
+            ->add('voterTitle')
+            ->add('zone')
+            ->add('section')
+            ->add('level')
+            ->add('class')
+            ->add('pattern')
+            ->add('regime')
+            ->add('admissionDate')
+            ->add('stocking')
+            ->add('bankName')
+            ->add('function')
+            ->add('bankAgency')
+            ->add('bankAccount')
+        ;
     }
 
     public function getName()
     {
-        return 'infocorp_type_affiliate';
+        return 'form_affiliate';
     }
 }

@@ -3,7 +3,7 @@
 namespace Infocorp\Bundle\SintufBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Colletions\ArrayColletion;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Affiliate
@@ -45,6 +45,12 @@ class Affiliate
 
     /**
      * @var string
+     * @ORM\Column(name="email", type="string", length=100)
+     */
+    private $email;
+
+    /**
+     * @var string
      *
      * @ORM\Column(name="address", type="string", length=255)
      */
@@ -55,7 +61,7 @@ class Affiliate
      *
      * @ORM\Column(name="dictrict", type="string", length=50)
      */
-    private $dictrict;
+    private $district;
 
     /**
      * @var string
@@ -290,7 +296,7 @@ class Affiliate
 
     public function __construct()
     {
-    	$this->dependents = new ArrayColletion();
+    	$this->dependents = new ArrayCollection();
     }
 
 
@@ -351,6 +357,29 @@ class Affiliate
     }
 
     /**
+     * Set email
+     *
+     * @param string $email
+     * @return Affiliate
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
      * Set address
      *
      * @param string $address
@@ -379,7 +408,7 @@ class Affiliate
      * @param string $dictrict
      * @return Affiliate
      */
-    public function setDictrict($dictrict)
+    public function setDistrict($dictrict)
     {
         $this->dictrict = $dictrict;
     
@@ -391,7 +420,7 @@ class Affiliate
      *
      * @return string 
      */
-    public function getDictrict()
+    public function getDistrict()
     {
         return $this->dictrict;
     }
