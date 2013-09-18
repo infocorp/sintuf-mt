@@ -1,0 +1,34 @@
+{% extends 'InfocorpSintufBundle::layout.html.twig' %}
+{% block content %}
+  
+
+   	<div class="span2">
+      <ul class="nav nav-list">
+        <li class="nav-header">Convênios</li>
+          <li>
+              {{ covenant.title }}
+          </li>
+      </ul>
+    </div>
+
+	<div class="span10">
+		<article>
+		    <h1 class="title-direction">
+		    	{{ covenant.title }}
+		    </h1>
+
+        <div class="description-direction">
+          {{ covenant.description | raw }}
+      </div>
+
+        <div class="image-direction">
+          {% thumbnail covenant.image, 'big' %}
+      </div>  
+
+		    <div class="content-direction">
+		    	{{ covenant.content | raw }}
+			</div>	    
+	    </article>
+	</div>
+
+{% endblock %}

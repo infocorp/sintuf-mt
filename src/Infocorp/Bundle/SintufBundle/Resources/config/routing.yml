@@ -60,9 +60,9 @@ sintuf_affiliate:
     defaults: { _controller: InfocorpSintufBundle:Affiliate:index }
 
 infocorp_sintuf_covenant_list:
-    path: /covenant
+    path: /convenios
     defaults: { _controller: InfocorpSintufBundle:Covenant:list }
 
 infocorp_sintuf_covenant_view:
-    path: /covenant/{slug}
+    path: /convenios/{slug}
     defaults: { _controller: InfocorpSintufBundle:Covenant:view }
