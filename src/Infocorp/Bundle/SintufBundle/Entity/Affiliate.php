@@ -1168,7 +1168,15 @@ class Affiliate
      */
     public function addDependents(Dependent $dependent)
     {
+    	$dependent->setAffiliate($this);
     	$this->dependents->add($dependent);
+
+    	return $this;
+    }
+
+    public function removeDependents(Dependent $dependent)
+    {
+    	$this->dependents->removeElement($dependent);
 
     	return $this;
     }

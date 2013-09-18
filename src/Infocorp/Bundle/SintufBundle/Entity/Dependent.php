@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Dependent
 {
+	const KINSHIP_FIRST_DEGREE = 1;
+	const KINSHIP_SECOND_DEGREE = 2;
+	const KINSHIP_THIRD_DEGREE = 3;
+
     /**
      * @var integer
      *
@@ -38,7 +42,7 @@ class Dependent
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="birthDate", type="datetime")
+     * @ORM\Column(name="birthDate", type="date")
      */
     private $birthDate;
 

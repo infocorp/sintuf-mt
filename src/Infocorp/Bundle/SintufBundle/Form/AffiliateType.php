@@ -46,6 +46,13 @@ class AffiliateType extends AbstractType
             ->add('function')
             ->add('bankAgency')
             ->add('bankAccount')
+            ->add('dependents', 'collection', array(
+            	'type' => new DependentType(),
+            	'label' => 'Dependentes',
+            	'allow_add' => true,
+            	'by_reference' => false,
+            	'allow_delete' => true,
+        	))
         ;
     }
 
