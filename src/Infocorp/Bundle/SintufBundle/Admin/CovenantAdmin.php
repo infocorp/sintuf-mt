@@ -9,13 +9,13 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\FormatterBundle\Formatter\Pool as FormatterPool;
 
-class DirectionAdmin extends Admin
+class CovenantAdmin extends Admin
 {
     public function configureFormFields(FormMapper $formMapper)
     {
         return $formMapper
             ->add('title', null, array('label' => 'Nome'))
-            ->add('description', null, array('label' => 'Cargo/Função'))
+            ->add('description', null, array('label' => 'Endereço'))
             ->add('image', 'sonata_type_model_list', array('label' => 'Imagem'))
             ->add('enabled', null, array(
                 'label' => 'Habilitado',
@@ -32,7 +32,7 @@ class DirectionAdmin extends Admin
                 ),
                 'target_field' => 'content',
                 'listener' => true,
-                'label' => 'Conteúdo',
+                'label' => 'Serviços oferecidos',
             ))
         ;
     }
@@ -41,7 +41,7 @@ class DirectionAdmin extends Admin
     {
         return $showMapper
             ->add('title', null, array('label' => 'Nome'))
-            ->add('description', null, array('label' => 'Cargo/Função'))
+            ->add('description', null, array('label' => 'Endereço'))
             ->add('image', null, array('label' => 'Imagem'))
             ->add('enabled', null, array('label' => 'Habilitado'))
             ->add('content', null, array('safe' => true))

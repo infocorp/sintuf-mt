@@ -9,9 +9,9 @@ use Sonata\NewsBundle\Model\Tag;
  * Direction
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Infocorp\Bundle\SintufBundle\Entity\DirectionRepository")
+ * @ORM\Entity(repositoryClass="Infocorp\Bundle\SintufBundle\Entity\CovenantRepository")
  */
-class Direction
+class Covenant
 {
     /**
      * @var integer

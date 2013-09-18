@@ -4,9 +4,9 @@
 
    	<div class="span2">
       <ul class="nav nav-list">
-        <li class="nav-header">Direção</li>
+        <li class="nav-header">Convênios</li>
           <li>
-              {{ director.title }}
+              {{ covenant.title }}
           </li>
       </ul>
     </div>
@@ -14,19 +14,19 @@
 	<div class="span10">
 		<article>
 		    <h1 class="title-direction">
-		    	{{ director.title }}
+		    	{{ covenant.title }}
 		    </h1>
 
         <div class="description-direction">
-          {{ director.description | raw }}
+          {{ covenant.description | raw }}
       </div>
 
         <div class="image-direction">
-          {% thumbnail director.image, 'small' %}
+          {% thumbnail covenant.image, 'big' %}
       </div>  
 
 		    <div class="content-direction">
-		    	{{ director.content | raw }}
+		    	{{ covenant.content | raw }}
 			</div>	    
 	    </article>
 	</div>
