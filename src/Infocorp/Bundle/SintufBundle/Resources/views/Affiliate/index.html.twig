@@ -8,6 +8,322 @@
 {% endblock %}
 
 {% block content %}
-  {{ form(form) }}
+  <div class="well offset3 span6">
+    
+    <form action="{{ path('sintuf_affiliate') }}" class="form-horizontal" method="POST">
+      <fieldset>
+        <div id="legend">
+          <legend>Afilie-se</legend>
+        </div>
+        <div class="personal-info">
+          <h2>Pessoal</h2>
+          <div class="control-group">
+            {{ form_label(form.registration, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.registration) }}
+              {{ form_errors(form.registration) }}
+            </div>
+          </div>
+          
+          <div class="control-group">
+            {{ form_label(form.name, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.name) }}
+              {{ form_errors(form.name) }}
+            </div>
+          </div>
+          
+          <div class="control-group">
+            {{ form_label(form.birthDate, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.birthDate) }}
+              {{ form_errors(form.birthDate) }}
+            </div>
+          </div>
+          
+          <div class="control-group">
+            {{ form_label(form.birthCity, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.birthCity) }}
+              {{ form_errors(form.birthCity) }}
+            </div>
+          </div>
+          
+          <div class="control-group">
+            {{ form_label(form.birthState, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.birthState) }}
+              {{ form_errors(form.birthState) }}
+            </div>
+          </div>
+          
+          <div class="control-group">
+            {{ form_label(form.sex, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.sex) }}
+              {{ form_errors(form.sex) }}
+            </div>
+          </div>
+          
+          <div class="control-group">
+            {{ form_label(form.associateDate, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.associateDate) }}
+              {{ form_errors(form.associateDate) }}
+            </div>
+          </div>
+          
+          <div class="control-group">
+            {{ form_label(form.civilStatus, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.civilStatus) }}
+              {{ form_errors(form.civilStatus) }}
+            </div>
+          </div>
+          
+          <div class="control-group">
+            {{ form_label(form.scholarity, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.scholarity) }}
+              {{ form_errors(form.scholarity) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.level, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.level) }}
+              {{ form_errors(form.level) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.class, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.class) }}
+              {{ form_errors(form.class) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.pattern, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.pattern) }}
+              {{ form_errors(form.pattern) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.stocking, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.stocking) }}
+              {{ form_errors(form.stocking) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.function, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.function) }}
+              {{ form_errors(form.function) }}
+            </div>
+          </div>
+        </div>
+
+        <div class="filiation">
+          <h2>Filiação</h2>
+
+          <div class="control-group">
+            {{ form_label(form.filiationFather, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.filiationFather) }}
+              {{ form_errors(form.filiationFather) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.filiationMother, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.filiationMother) }}
+              {{ form_errors(form.filiationMother) }}
+            </div>
+          </div>
+        </div>
+      
+        <div class="contact">
+          <h2>Contato</h2>
+
+          <div class="control-group">
+            {{ form_label(form.address, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.address) }}
+              {{ form_errors(form.address) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.email, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.email) }}
+              {{ form_errors(form.email) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.district, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.district) }}
+              {{ form_errors(form.district) }}
+            </div>
+          </div>
+        </div>
+    
+        <div class="documentation">
+          <h2>Documentação</h2>
+
+          <div class="control-group">
+            {{ form_label(form.registrationId, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.registrationId) }}
+              {{ form_errors(form.registrationId) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.expeditionOrgan, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.expeditionOrgan) }}
+              {{ form_errors(form.expeditionOrgan) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.expeditionDate, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.expeditionDate) }}
+              {{ form_errors(form.expeditionDate) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.cpf, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.cpf) }}
+              {{ form_errors(form.cpf) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.ctps, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.ctps) }}
+              {{ form_errors(form.ctps) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.voterTitle, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.voterTitle) }}
+              {{ form_errors(form.voterTitle) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.zone, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.zone) }}
+              {{ form_errors(form.zone) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.section, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.section) }}
+              {{ form_errors(form.section) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.admissionDate, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.admissionDate) }}
+              {{ form_errors(form.admissionDate) }}
+            </div>
+          </div>
+        </div>
+
+        <div class="financial">
+          <h2>Financeiro</h2>
+
+          <div class="control-group">
+            {{ form_label(form.bankName, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.bankName) }}
+              {{ form_errors(form.bankName) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.bankAgency, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.bankAgency) }}
+              {{ form_errors(form.bankAgency) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.bankAccount, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.bankAccount) }}
+              {{ form_errors(form.bankAccount) }}
+            </div>
+          </div>
+        </div>
+        
+        <div class="dependents">
+          <h2>Dependentes</h2>
+          <ul class="dependent-list" data-prototype="{{ form_widget(form.dependents.vars.prototype)|e }}">
+          </ul>
+        </div>
+
+        <div class="form-actions">
+          <input class="btn btn-primary" type="submit" value="Afiliar-se">
+        </div>
+      </fieldset>
+    </form>
+  </div>
 
 {% endblock %}

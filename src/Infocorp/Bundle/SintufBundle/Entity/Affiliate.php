@@ -4,6 +4,7 @@ namespace Infocorp\Bundle\SintufBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Affiliate
@@ -45,7 +46,9 @@ class Affiliate
 
     /**
      * @var string
+     * 
      * @ORM\Column(name="email", type="string", length=100)
+     * @Assert\Email(message="Por favor, informe um email válido")
      */
     private $email;
 
