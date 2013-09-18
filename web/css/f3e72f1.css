@@ -13,10 +13,10 @@ a img{border:0;}
 
 header{
 	width: 100%;
-	height: 160px;
-	background: url('/bundles/infocorpaffemat/images/bg_topo.png') repeat-x;
+	height: 595px;
+	background: url('/bundles/infocorpsintuf/images/back_top.png') repeat-x;
 	background-position: center;
-	border-bottom: 5px solid #d6790f;
+	border-bottom: 5px solid #666;
 }
 
 header .header_top{
@@ -26,8 +26,8 @@ header .header_top{
 }
 
 header .header_desc{
-	width: 600px;
-	height: 50px;
+	width: 335px;
+	height: 150px;
 	font-family: "Aleo";
 	text-shadow: #000 1px 1px 1px;
 	color: #fff;
@@ -39,14 +39,21 @@ header .header_desc{
 
 header .header_desc h1{
 	padding-top: 15px;
+	font-size: 20px;
+	line-height: 20px;
+	float: left;
+	position: relative;
+	top: 5px;
+	right: 80px;
 }
 
 header .logo{
 	width: 205px;
 	height: 90px;
-	float: left;
-	margin: -20px -105px;
-	float: left;
+	float: right;
+	position: relative;
+	top: -125px;
+	right: 615px;
 }
 
 header .menu_sup{
@@ -54,20 +61,23 @@ header .menu_sup{
 }
 
 header .menu_sup ul{
-	width: 527px;
-	height: 50px;
-	margin: 75px auto;
+	width: 700px;
+	height: 40px;
+	margin: 41px -406px;
 	list-style: none;
 	text-align: center;
+	float: right;
+	position: relative;
 }
 
 header .menu_sup li{
 	float: left;
-	padding: 0px 10px 0px 10px;
+	padding: 5px 10px 5px 10px;
 	font-family: "Aleo";
 	font-size: 20px;
 	font-weight: bold;
 	text-shadow: #000 1px 1px 1px;
+	background: #9a100e;
 }
 
 header .menu_sup a{
@@ -83,19 +93,19 @@ header .menu_sup a:hover{
 /*###################### SLIDER ######################*/
 
 #home_slider{
-	width: 900px;
-	margin: 0 auto;
+	width: 670px;
+	margin: 5px 5px;
 }
 
 #home_slider .carousel-caption {
-	height: 75px;
+	height: 45px;
 }
 
 #home_slider .carousel-caption h1 {
 	font-size: 25px;
 	color: #f2f2f2;
-	margin-top: -15px;
-	margin-bottom: -5px;
+	margin-top: -22px;
+	margin-bottom: -8px;
 }
 
 #home_slider .lead {
@@ -111,7 +121,147 @@ header .menu_sup a:hover{
 	border-radius: 0px;
 }
 
+#home_slider .news_slider{
+	float: right;
+	position: relative;
+	width: 260px;
+	height: 250px;
+	top: -350px;
+	left: 270px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 15px;
+}
+
+#home_slider .news_slider span{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	border-bottom: 3px;
+	border-bottom-color: #333;
+	border-bottom-style: solid;
+}
+
+header .back_slider{
+	width: 980px;
+	height: 255px;
+	background: #f2f2f2;
+	margin: 71px auto;
+	border: 2px;
+	border-color: #666;
+	border-style: solid;
+}
+
+#home_slider .carousel{
+	margin-bottom: 107px;
+}
+
+/*###################### UTILIDADES ######################*/
+
+#utilities{
+	width: 982px;
+	height: 105px;
+	margin: 0 auto;
+}
+
+#utilities .nav_serv_utilities{
+	width: 280px;
+	height: 50px;
+	background: black;
+}
+
+#utilities .nav{
+	list-style: none;
+	float: left;
+}
+
+#utilities .nav_utilities{
+	list-style: none;
+	float: left;
+	position: relative;
+	top: -355px;
+}
+
+
 /*###################### HOME NEWS ######################*/
+
+#news{
+	width: 692px;
+	height: 220px;
+	margin: -355px 200px;
+	float: right;
+}
+
+#news span{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+	border-bottom: 5px;
+	border-bottom-color: #333;
+	border-bottom-style: solid;
+}
+
+#news h3{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+#news .destaque{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 15px;
+	color: #333;
+	text-align: justify;
+}
+
+#news p{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 15px;
+	color: #333;
+	text-align: justify;
+}
+
+#news .news_block{
+	list-style: none;
+}
+
+#news .news_block img{
+	border: 0;
+	padding-bottom: 5px;
+}
+
+#news .content_news span{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+	border-bottom: 0px;
+}
+
+#news ul{
+	margin: 0;
+}
+
+#news li{
+	float: left;
+	width: 335px;
+	padding-right: 10px;
+}
+
+#news h3{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+#news p{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 15px;
+	color: #333;
+	text-align: justify;
+}
+
 
 #noticias{
 	width: 100%;
@@ -193,9 +343,10 @@ header .menu_sup a:hover{
 /*###################### HOME BLOCO SERVIÇOS ######################*/
 
 #servicos{
-	width: 900px;
-	height: 190px;
-	margin: 10px auto;
+	width: 980px;
+	height: 120px;
+	background: pink;
+	margin: 0 auto;
 }
 
 
@@ -332,9 +483,12 @@ header .menu_sup a:hover{
 /*###################### MEDIA SOCIAL ######################*/
 
 #media_social{
-	width: 900px;
-	height: 260px;
-	margin: 0 auto;
+	width: 292px;
+	height: 600px;
+	float: left;
+	position: relative;
+	top: -355px;
+	left: 160px;	
 }
 
 /*######################  PAGE NEWS ######################*/
@@ -354,9 +508,11 @@ header .menu_sup a:hover{
 #rodape{
 	width: 100%;
 	height: 100px;
-	background: url('/bundles/infocorpaffemat/images/bg_rodape.png') repeat-x;
-	border-top: 5px solid #d6790f;
+	background: url('/bundles/infocorpsintuf/images/back_top.png') repeat-x;
+	border-top: 5px solid #666;
+	float: left;
 }
+
 /*!
  * Bootstrap v2.3.2
  *
