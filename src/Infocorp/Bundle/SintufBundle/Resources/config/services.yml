@@ -20,6 +20,12 @@ services:
             - { name: sonata.admin, manager_type: orm, group: Site, label: Direção }
         arguments: [null, Infocorp\Bundle\SintufBundle\Entity\Direction, null]
 
+    sonata.admin.covenant:
+        class: Infocorp\Bundle\SintufBundle\Admin\CovenantAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Site, label: Convênio }
+        arguments: [null, Infocorp\Bundle\SintufBundle\Entity\Covenant, null]
+
     sintuf.form.type.affiliate:
         class: Infocorp\Bundle\SintufBundle\Form\AffiliateType
         tags: 

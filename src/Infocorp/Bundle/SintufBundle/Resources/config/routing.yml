@@ -58,3 +58,11 @@ infocorp_news_add_comment:
 sintuf_affiliate:
     path: /afilie-se
     defaults: { _controller: InfocorpSintufBundle:Affiliate:index }
+
+infocorp_sintuf_covenant_list:
+    path: /covenant
+    defaults: { _controller: InfocorpSintufBundle:Covenant:list }
+
+infocorp_sintuf_covenant_view:
+    path: /covenant/{slug}
+    defaults: { _controller: InfocorpSintufBundle:Covenant:view }
