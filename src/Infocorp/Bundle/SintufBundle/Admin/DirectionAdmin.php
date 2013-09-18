@@ -14,8 +14,9 @@ class DirectionAdmin extends Admin
     public function configureFormFields(FormMapper $formMapper)
     {
         return $formMapper
-            ->add('title', null, array('label' => 'Título'))
-            ->add('image', 'sonata_type_model_list', array('label' => 'Imagem (1500x550)'))
+            ->add('title', null, array('label' => 'Nome'))
+            ->add('description', null, array('label' => 'Cargo/Função'))
+            ->add('image', 'sonata_type_model_list', array('label' => 'Imagem'))
             ->add('enabled', null, array(
                 'label' => 'Habilitado',
                 'attr' => array(
@@ -39,7 +40,8 @@ class DirectionAdmin extends Admin
     public function configureShowFields(ShowMapper $showMapper)
     {
         return $showMapper
-            ->add('title', null, array('label' => 'Título'))
+            ->add('title', null, array('label' => 'Nome'))
+            ->add('description', null, array('label' => 'Cargo/Função'))
             ->add('image', null, array('label' => 'Imagem'))
             ->add('enabled', null, array('label' => 'Habilitado'))
             ->add('content', null, array('safe' => true))

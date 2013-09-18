@@ -17,6 +17,10 @@
 		    	{{ director.title }}
 		    </h1>
 
+        <div class="description-direction">
+          {{ director.description | raw }}
+      </div>
+
         <div class="image-direction">
           {% thumbnail director.image, 'small' %}
       </div>  
