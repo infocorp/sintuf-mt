@@ -16,10 +16,11 @@ class AffiliateType extends AbstractType
             ->add('district', null, array('label' => 'Bairro'))
             ->add('email', 'email', array('label' => 'Email'))
             ->add('phone', null, array('label' => 'Telefone'))
+            ->add('cellphone', null, array('label' => 'Celular'))
             ->add('city', null, array('label' => 'Cidade'))
             ->add('state', null, array('label' => 'Estado'))
             ->add('birthCity', null, array('label' => 'Cidade natal'))
-            ->add('birthState', null, array('label' => 'Estado natal'))
+            ->add('state', null, array('label' => 'UF'))
             ->add('birthDate', null, array(
             	'label' => 'Data de nascimento',
             	'widget' => 'single_text',

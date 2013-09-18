@@ -54,11 +54,11 @@
           </div>
           
           <div class="control-group">
-            {{ form_label(form.birthState, null, {'attr': {'class': 'control-label'}}) }}
+            {{ form_label(form.state, null, {'attr': {'class': 'control-label'}}) }}
 
             <div class="controls">
-              {{ form_widget(form.birthState) }}
-              {{ form_errors(form.birthState) }}
+              {{ form_widget(form.state) }}
+              {{ form_errors(form.state) }}
             </div>
           </div>
           
@@ -184,6 +184,24 @@
             <div class="controls">
               {{ form_widget(form.email) }}
               {{ form_errors(form.email) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.phone, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.phone) }}
+              {{ form_errors(form.phone) }}
+            </div>
+          </div>
+
+          <div class="control-group">
+            {{ form_label(form.cellphone, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.cellphone) }}
+              {{ form_errors(form.cellphone) }}
             </div>
           </div>
 

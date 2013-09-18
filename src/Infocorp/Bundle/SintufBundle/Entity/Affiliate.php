@@ -75,6 +75,13 @@ class Affiliate
 
     /**
      * @var string
+     * 
+     * @ORM\Column(name="cellphone", type="string", length=20)
+     */
+    private $cellphone;
+
+    /**
+     * @var string
      *
      * @ORM\Column(name="city", type="string", length=255)
      */
@@ -90,23 +97,9 @@ class Affiliate
     /**
      * @var string
      *
-     * @ORM\Column(name="cep", type="string", length=8)
-     */
-    private $cep;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="birthCity", type="string", length=255)
      */
     private $birthCity;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="birthState", type="string", length=2)
-     */
-    private $birthState;
 
     /**
      * @var \DateTime
@@ -452,6 +445,29 @@ class Affiliate
     }
 
     /**
+     * Set cellphone
+     *
+     * @param string $cellphone
+     * @return Affiliate
+     */
+    public function setCellphone($cellphone)
+    {
+        $this->cellphone = $cellphone;
+    
+        return $this;
+    }
+
+    /**
+     * Get cellphone
+     *
+     * @return string 
+     */
+    public function getCellphone()
+    {
+        return $this->cellphone;
+    }
+
+    /**
      * Set city
      *
      * @param string $city
@@ -495,29 +511,6 @@ class Affiliate
     public function getState()
     {
         return $this->state;
-    }
-
-    /**
-     * Set cep
-     *
-     * @param string $cep
-     * @return Affiliate
-     */
-    public function setCep($cep)
-    {
-        $this->cep = $cep;
-    
-        return $this;
-    }
-
-    /**
-     * Get cep
-     *
-     * @return string 
-     */
-    public function getCep()
-    {
-        return $this->cep;
     }
 
     /**
