@@ -35,9 +35,16 @@ class Menu
     protected $url;
 
     /**
+     * @var boolean
+     * 
+     * @ORM\Column(name="blank_page", type="boolean")
+     */
+    protected $blankPage;
+
+    /**
      * @var Menu
      * 
-     * @ORM\OneToMany(targetEntity="Menu", mappedBy="id")
+     * @ORM\OneToMany(targetEntity="Menu", mappedBy="parent")
      */
     protected $children;
 
@@ -83,6 +90,16 @@ class Menu
         return $this->url;
     }
 
+    public function setBlankPage($blankPage)
+    {
+    	$this->blankPage = $blankPage;
+    }
+
+    public function isBlankPage()
+    {
+    	return $this->blankPage;
+    }
+
     public function addChildren(Menu $children)
     {
         $this->children->add($children);
@@ -100,6 +117,11 @@ class Menu
     public function getChildren()
     {
         return $this->children;
+    }
+
+    public function hasChildren()
+    {
+    	return !$this->children->isEmpty();
     }
 
     public function setParent(Menu $parent)

@@ -18,12 +18,169 @@
 
   
 </head>
+
 <body>
-  {% block content%}
+
+    {% block menu_top %}
+
+      <section id="top-menu">
+          <div class="container">
+              <div class="row">
+                  <div class="span6 hidden-phone">
+                      <ul class="top-menu">
+                        <li><iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSintufMT&amp;width=450&amp;height=35&amp;colorscheme=dark&amp;layout=standard&amp;action=like&amp;show_faces=false&amp;send=true&amp;appId=289289821083335" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></li>
+                          
+                        <!-- <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Shorcodes</a></li>
+                        <li><a href="#" class="last">Contact</a></li> -->
+                      </ul>
+                  </div>
+                  <div class="span6">
+                      <ul class="top-social">
+                        <li><a href="./index.html">Acesso ao webmail</a></li>
+                        <!-- <li><a href="#" class="twitter2"></a></li>
+                        <li><a href="#" class="facebook"></a></li>
+                        <li><a href="#" class="google last"></a></li> -->
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+    {% endblock %}
+
+      {% block header %}
+
+        <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="span2 logo">
+                    <a href="{{ path('infocorp_sintuf_homepage') }}"><img src="{{ asset('bundles/infocorpsintuf/images/logo1.png') }}" alt="logo"></a>
+                </div>
+                <div class="span10 description">
+                    <a href="{{ path('infocorp_sintuf_homepage') }}" class="alignright description">
+                        <h1>Sindicato dos Trabalhadores Técnico-Administrativos em Educação da Universidade Federal de Mato Grosso</h1>
+                    </a>
+                </div>
+            </div>
+
+            {% block menu %}
+
+              <nav id="menu">
+                <ul class="clearfix sf-js-enabled sf-shadow">
+                    <li><a href="{{ path('infocorp_sintuf_homepage') }}" class="current">Início</a></li>
+                    
+                    <li class=""><a href="./about.html" class="sf-with-ul">Institucional</a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a href="./about.html">Sobre nós</a></li>
+                            <li class="last"><a href="./services.html">Nossos serviços</a></li>
+                        </ul>
+                    </li>
+                    <li class=""><a href="./portfolio2.html" class="sf-with-ul">Comunicação</a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a href="./portfolio2.html" class="sf-with-ul">Jornal</a>
+                                <ul style="display: none; visibility: hidden;">
+                                    <li><a href="./portfolio2.html">Categoria 1</a></li>
+                                    <li class="last"><a href="./portfolio2ex.html">Categoria 2</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./portfolio3.html" class="sf-with-ul">Notícias</a>
+                                <ul style="display: none; visibility: hidden;">
+                                    <li><a href="./portfolio3.html">Categoria 1</a></li>
+                                    <li class="last"><a href="./portfolio3ex.html">Categoria 2</a></li>
+                                </ul>
+                            </li>
+                            <li class="last"><a href="./portfolio4.html" class="sf-with-ul">Imprensa</a>
+                                <ul style="display: none; visibility: hidden;">
+                                    <li><a href="./portfolio4.html">Categoria 1</a></li>
+                                    <li class="last"><a href="./portfolio4ex.html">Categoria 2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="./blog.html" class="sf-with-ul">Jurídico</a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a href="./blog.html">Processos</a></li>
+                            <li class="last"><a href="./blog-single.html">Legislação</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ path('infocorp_sintuf_fale_conosco') }}">Contato</a></li>
+            </nav>
+
+            {% endblock %}
+
+        </div>
+        </header>
+      
+      {% endblock %}
 
 
+
+  {% block content %}
 
   {% endblock %}<!--/container-->
+
+  
+
+
+  {% block footer %}
+    <footer id="footer">
+    <div class="container">
+    <div class="row">
+        <div class="span2">
+            <section class="block-dark">
+              <img src="{{ asset('bundles/infocorpsintuf/images/35.png') }}" alt="">
+            </section>
+        </div>
+        <div class="span6">
+          <p>Av. Fernando Corrêa da Costa, s/nº. - Campus Universitário - Coxipó - MT - 78060-900</p>
+          <p>Tel: (65) 3028-2924 | Fax: (65) 3028-2925</p>
+          <p>sintuf@terra.com.br / sintuf@ufmt.br</p>
+          
+        </div>
+        <div class="span4">
+            <h3>Contato</h3>
+            <form id="contact" class="form-horizontal" method="post">
+                <div class="controls">
+                    <input type="text" id="inputName" placeholder="Name" name="inputName">
+                    <label class="ferror" for="inputName" id="fname_error" style="display: none;">Name is required.</label>
+                </div>
+                <div class="controls">
+                    <input type="text" id="inputEmail" placeholder="Email" name="inputEmail">
+                    <label class="ferror" for="inputEmail" id="femail_error" style="display: none;">Email is required.</label>
+                </div>
+                <div class="controls">
+                    <textarea rows="3" id="inputMessage" placeholder="Message" name="inputMessage"></textarea>
+                    <label class="ferror" for="inputMessage" id="fmessage_error" style="display: none;">Message is required.</label>
+                </div>
+                <div class="controls">
+                    <input type="submit" class="btn btn-success btn-large footer-button" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</footer>
+  {% endblock %}
+
+  {% block menu_footer %}
+
+  <section id="footer-menu">
+    <div class="container">
+        <div class="row">
+            <p class="span12"><span>© Copyright 2013, <span class="color2">SINTUF-MT</span> | Todos os direitos reservados | Desenvolvido por Infocorp - Empresa Júnior</span></p>
+
+        </div>
+    </div>
+</section>
+
+  {% endblock %}
+
+  {% block vai_topo %}
+
+  <a href="#" id="toTop" style="display: inline;"><span id="toTopHover"></span>To Top</a>
+
+  {% endblock %}
 
       {% block javascripts %}
       {% javascripts 

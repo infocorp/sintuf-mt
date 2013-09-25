@@ -14,6 +14,10 @@ class MenuAdmin extends Admin
         $formMapper
             ->add('name', null, array('label' => 'Nome'))
             ->add('url')
+            ->add('blankPage', null, array(
+            	'label' => 'Abrir em nova aba',
+            	'required' => false,
+        	))
             ->add('parent', 'sonata_type_model_list', array(
                 'label' => 'Pai',
                 'required' => false,
@@ -26,6 +30,10 @@ class MenuAdmin extends Admin
         $listMapper
             ->addIdentifier('name', null, array('label' => 'Nome'))
             ->add('url')
+            ->add('blankPage', null, array(
+            	'label' => 'Abrir em nova aba',
+            	'editable' => true,
+        	))
             ->add('parent', null, array('label' => 'Pai'))
         ;
     }
@@ -34,7 +42,11 @@ class MenuAdmin extends Admin
     {
         $datagridMapper
             ->add('name', null, array('label' => 'Nome'))
-            ->add('parent', null, array('label' => 'Pai'))
+            ->add('parent', null, array(
+            	'label' => 'Pai',
+            	'required' => false,
+        	))
+            ->add('blankPage', null, array('label' => 'Abrir em nova aba'))
         ;
     }
 }

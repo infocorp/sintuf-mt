@@ -1,5 +1,6 @@
 {% extends 'InfocorpSintufBundle::layout.html.twig' %}
 
+
 {% block content %}
   {% if app.session.flashbag.has('success') %}
     {% for message in app.session.flashbag.get('success') %}
