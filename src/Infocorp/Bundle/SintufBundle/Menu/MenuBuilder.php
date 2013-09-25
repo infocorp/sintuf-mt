@@ -9,7 +9,11 @@ class MenuBuilder extends ContainerAware
 {
     public function mainMenu(FactoryInterface $factory, array $options)
     {
-        $menu = $factory->createItem('root');
+        $menu = $factory->createItem('root', array(
+        	'attributes' => array(
+        		'class' => 'clearfix sf-js-enabled sf-shadow',
+    		),
+    	));
 
         // Retrieves the menu itens added to database
         $menuManager = $this->container->get('doctrine')->getManager()->getRepository('InfocorpSintufBundle:Menu');
@@ -25,6 +29,7 @@ class MenuBuilder extends ContainerAware
             if ($item->isBlankPage()) {
                 $menuItemOptions['linkAttributes'] = array(
                     'target' => '_blank',
+                    'class' => 'sf-with-ul',
                 );
             }
             $menuElement = $menu->addChild($item->getName(), array(
