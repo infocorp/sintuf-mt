@@ -20,16 +20,30 @@ class MenuBuilder extends ContainerAware
         $menuItens = $menuManager->findBy(array('parent' => null));
 
         // Add default itens
-        $menu->addChild('Home', array('route' => 'infocorp_sintuf_homepage'));
-        $menu->addChild('Notícias', array('route' => 'infocorp_sintuf_noticias'));
+        $menu->addChild('Home', array(
+        	'route' => 'infocorp_sintuf_homepage',
+        	'linkAttributes' => array(
+            	'class' => 'sf-with-ul',
+        	),
+    	));
+        $menu->addChild('Notícias', array(
+        	'route' => 'infocorp_sintuf_noticias',
+        	'linkAttributes' => array(
+            	'class' => 'sf-with-ul',
+        	),
+    	));
 
         // Add database menu itens 
         foreach ($menuItens as $item) {
-            $menuItemOptions = array('uri' => $item->getUrl());
+            $menuItemOptions = array(
+            	'uri' => $item->getUrl(),
+            	'linkAttributes' => array(
+            		'class' => 'sf-with-ul',
+        		),
+        	);
             if ($item->isBlankPage()) {
                 $menuItemOptions['linkAttributes'] = array(
                     'target' => '_blank',
-                    'class' => 'sf-with-ul',
                 );
             }
             $menuElement = $menu->addChild($item->getName(), array(
@@ -51,6 +65,9 @@ class MenuBuilder extends ContainerAware
         
         $menu->addChild('Contato', array(
             'route' => 'infocorp_sintuf_fale_conosco',
+            'linkAttributes' => array(
+            	'class' => 'sf-with-ul',
+        	),
         ));
 
         return $menu;
