@@ -11,11 +11,28 @@ class MenuBuilder extends ContainerAware
     {
         $menu = $factory->createItem('root');
 
+        $menuManager = $this->container->get('doctrine')->getManager()->getRepository('InfocorpSintufBundle:Menu');
+        $menuItens = $menuManager->findBy(array('parent' => null));
+
         $menu->addChild('Home', array('route' => 'infocorp_sintuf_homepage'));
-        $institutional = $menu->addChild('Institucional', array(
-                'route' => 'infocorp_sintuf_institutional_list',
-        ));
-        $institutional->addChild('blabla');
+
+        foreach ($menuItens as $item) {
+        	$menuElement = $menu->addChild($item->getName(), array(
+        		'uri' => $item->getUrl(),
+    		));
+
+    		if ($item->hasChildren()) {
+    			foreach ($item->getChildren() as $child) {
+    				$menuElement->addChild($child->getName(), array(
+    					'uri' => $child->getUrl(),
+					));
+    			}
+    		}
+        }
+        
+        $menu->addChild('Contato', array(
+        	'route' => 'infocorp_sintuf_fale_conosco',
+		));
 
         return $menu;
     }

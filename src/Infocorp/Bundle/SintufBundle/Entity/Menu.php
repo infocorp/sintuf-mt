@@ -37,7 +37,7 @@ class Menu
     /**
      * @var Menu
      * 
-     * @ORM\OneToMany(targetEntity="Menu", mappedBy="id")
+     * @ORM\OneToMany(targetEntity="Menu", mappedBy="parent")
      */
     protected $children;
 
@@ -100,6 +100,11 @@ class Menu
     public function getChildren()
     {
         return $this->children;
+    }
+
+    public function hasChildren()
+    {
+    	return !$this->children->isEmpty();
     }
 
     public function setParent(Menu $parent)
