@@ -65,8 +65,8 @@
             </div>
 
             {% block menu %}
-
-              <nav id="menu">
+              {{ knp_menu_render('InfocorpSintufBundle:MenuBuilder:mainMenu', {'template': 'InfocorpSintufBundle:Menu:sintuf_menu.html.twig'}) }}
+              <!-- <nav id="menu">
                 <ul class="clearfix sf-js-enabled sf-shadow">
                     <li><a href="{{ path('infocorp_sintuf_homepage') }}" class="current">Início</a></li>
                     
@@ -105,7 +105,7 @@
                         </ul>
                     </li>
                     <li><a href="{{ path('infocorp_sintuf_fale_conosco') }}">Contato</a></li>
-            </nav>
+            </nav> -->
 
             {% endblock %}
 
