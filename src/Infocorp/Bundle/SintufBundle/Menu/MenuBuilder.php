@@ -11,11 +11,15 @@ class MenuBuilder extends ContainerAware
     {
         $menu = $factory->createItem('root');
 
+        // Retrieves the menu itens added to database
         $menuManager = $this->container->get('doctrine')->getManager()->getRepository('InfocorpSintufBundle:Menu');
         $menuItens = $menuManager->findBy(array('parent' => null));
 
+        // Add default itens
         $menu->addChild('Home', array('route' => 'infocorp_sintuf_homepage'));
+        $menu->addChild('Notícias', array('route' => 'infocorp_sintuf_noticias'));
 
+        // Add database menu itens 
         foreach ($menuItens as $item) {
             $menuItemOptions = array('uri' => $item->getUrl());
             if ($item->isBlankPage()) {
