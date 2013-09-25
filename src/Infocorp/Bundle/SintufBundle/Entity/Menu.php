@@ -35,6 +35,13 @@ class Menu
     protected $url;
 
     /**
+     * @var boolean
+     * 
+     * @ORM\Column(name="blank_page", type="boolean")
+     */
+    protected $blankPage;
+
+    /**
      * @var Menu
      * 
      * @ORM\OneToMany(targetEntity="Menu", mappedBy="parent")
@@ -81,6 +88,16 @@ class Menu
     public function getUrl()
     {
         return $this->url;
+    }
+
+    public function setBlankPage($blankPage)
+    {
+    	$this->blankPage = $blankPage;
+    }
+
+    public function isBlankPage()
+    {
+    	return $this->blankPage;
     }
 
     public function addChildren(Menu $children)

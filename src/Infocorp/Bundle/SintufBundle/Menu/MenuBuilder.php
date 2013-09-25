@@ -17,22 +17,32 @@ class MenuBuilder extends ContainerAware
         $menu->addChild('Home', array('route' => 'infocorp_sintuf_homepage'));
 
         foreach ($menuItens as $item) {
-        	$menuElement = $menu->addChild($item->getName(), array(
-        		'uri' => $item->getUrl(),
-    		));
+            $menuItemOptions = array('uri' => $item->getUrl());
+            if ($item->isBlankPage()) {
+                $menuItemOptions['linkAttributes'] = array(
+                    'target' => '_blank',
+                );
+            }
+            $menuElement = $menu->addChild($item->getName(), array(
+                'uri' => $item->getUrl(),
+            ));
 
-    		if ($item->hasChildren()) {
-    			foreach ($item->getChildren() as $child) {
-    				$menuElement->addChild($child->getName(), array(
-    					'uri' => $child->getUrl(),
-					));
-    			}
-    		}
+            if ($item->hasChildren()) {
+                foreach ($item->getChildren() as $child) {
+                    $options = array('uri' => $child->getUrl());
+                    if ($child->isBlankPage()) {
+                        $options['linkAttributes'] = array(
+                            'target' => '_blank',
+                        );
+                    }
+                    $menuElement->addChild($child->getName(), $options);
+                }
+            }
         }
         
         $menu->addChild('Contato', array(
-        	'route' => 'infocorp_sintuf_fale_conosco',
-		));
+            'route' => 'infocorp_sintuf_fale_conosco',
+        ));
 
         return $menu;
     }
