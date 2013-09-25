@@ -211,6 +211,10 @@
         //   }(window.jQuery)
         //Menu
  //Menu
+    // Script para corrigir o menu
+    $(document).ready(function() {
+      $('ul.sf-shadow').addClass('clearfix');
+    });
     jQuery('#menu > ul').superfish({ 
         delay:       1000,                           
         animation:   {opacity:'show', height:'show'}, 

@@ -1,4 +1,4 @@
-var collectionHolder = $('#form_affiliate_dependents');
+var collectionHolder = $('.dependent-list');
 
     var addTagLink = $('<a href="#" class="add-dependent-link">Adicionar dependente</a>');
     var newLinkLi  = $('<li></li>').append(addTagLink);
@@ -45,6 +45,7 @@ var collectionHolder = $('#form_affiliate_dependents');
       collectionHolder.data('index', index + 1);
 
       var newFormLi = $('<li class="dependent-form"></li>').append(newForm);
+      
       linkLi.before(newFormLi);
       addDependentDeleteLink(newFormLi);
     }
