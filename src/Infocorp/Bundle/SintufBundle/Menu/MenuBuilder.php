@@ -7,7 +7,7 @@ use Symfony\Component\DependencyInjection\ContainerAware;
 
 class MenuBuilder extends ContainerAware
 {
-    public function testMenu(FactoryInterface $factory, array $options)
+    public function mainMenu(FactoryInterface $factory, array $options)
     {
         $menu = $factory->createItem('root');
 
