@@ -1,63 +1,553 @@
 {% extends 'InfocorpSintufBundle::layout.html.twig' %}
 {% block content %}
 
+  {% block menu_top %}
 
-<div class="back_slider">
-          {{ render(url('infocorp_sintuf_slider')) }}
-
+    <section id="top-menu">
+        <div class="container">
+            <div class="row">
+                <div class="span6 hidden-phone">
+                    <ul class="top-menu">
+                      <li><iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSintufMT&amp;width=450&amp;height=35&amp;colorscheme=dark&amp;layout=standard&amp;action=like&amp;show_faces=false&amp;send=true&amp;appId=289289821083335" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></li>
+                        
+                      <!-- <li><a href="#">Sitemap</a></li>
+                      <li><a href="#">Shorcodes</a></li>
+                      <li><a href="#" class="last">Contact</a></li> -->
+                    </ul>
+                </div>
+                <div class="span6">
+                    <ul class="top-social">
+                      <li><a href="./index.html">Acesso ao webmail</a></li>
+                      <!-- <li><a href="#" class="twitter2"></a></li>
+                      <li><a href="#" class="facebook"></a></li>
+                      <li><a href="#" class="google last"></a></li> -->
+                    </ul>
+                </div>
+            </div>
         </div>
+    </section>
 
-{% block servicos %}
-  <div id="utilities">
-    <ul class="nav">
-      <li class="nav_utilities"><a href="{{ path('infocorp_sintuf_homepage') }}" title="SINTUF-MT" alt="SINTUF-MT"><img src="{{ asset('bundles/infocorpsintuf/images/cadastro.png') }}" title="SINTUF-MT" alt="SINTUF-MT"></a></li>
-      <li class="nav_utilities"><a href="{{ path('infocorp_sintuf_homepage') }}" title="SINTUF-MT" alt="SINTUF-MT"><img src="{{ asset('bundles/infocorpsintuf/images/downloads.png') }}" title="SINTUF-MT" alt="SINTUF-MT"></a></li>
-      <li class="nav_utilities"><a href="{{ path('infocorp_sintuf_covenant_list') }}" title="SINTUF-MT" alt="SINTUF-MT"><img src="{{ asset('bundles/infocorpsintuf/images/convenios.png') }}" title="SINTUF-MT" alt="SINTUF-MT"></a></li>
-      <li class="nav_utilities"><a href="{{ path('infocorp_sintuf_direction_list') }}" title="SINTUF-MT" alt="SINTUF-MT"><img src="{{ asset('bundles/infocorpsintuf/images/direcao.png') }}" title="SINTUF-MT" alt="SINTUF-MT"></a></li>
-    </ul>
-  </div>
-{% endblock %}
+  {% endblock %}
 
-{% block noticias %}
-  <div id="news">
-    <span>Notícias</span>
-    <h3>Dolor rhoncus, amet in, turpis dapibus!</h3>
-    <p class="destaque">Auctor augue adipiscing odio phasellus phasellus, rhoncus ut odio in? Montes parturient duis et, pulvinar? Enim nec tortor, nunc nunc! Elementum diam, nec cursus facilisis tristique est montes vut nunc, placerat</p>
+    {% block header %}
 
-    <ul class="news_block">
-      <li class="content_news">
-        <h3>Dolor rhoncus, amet in, turpis dapibus!</h3>
-        <img src="{{ asset('bundles/infocorpsintuf/images/slide-01.jpg') }}" title="SINTUF-MT" alt="SINTUF-MT">
-        <p>Auctor augue adipiscing odio phasellus phasellus, rhoncus ut odio in? Montes parturient duis et, pulvinar? Enim nec tortor, nunc nunc! Elementum diam, nec cursus facilisis tristique est montes vut nunc, placerat</p>
-      </li>
-      <li class="content_news">
-        <h3>Dolor rhoncus, amet in, turpis dapibus!</h3>
-        <img src="{{ asset('bundles/infocorpsintuf/images/slide-01.jpg') }}" title="SINTUF-MT" alt="SINTUF-MT">
-        <p>Auctor augue adipiscing odio phasellus phasellus, rhoncus ut odio in? Montes parturient duis et, pulvinar? Enim nec tortor, nunc nunc! Elementum diam, nec cursus facilisis tristique est montes vut nunc, placerat</p>
-      </li>
-      <li class="content_news">
-        <h3>Dolor rhoncus, amet in, turpis dapibus!</h3>
-        <img src="{{ asset('bundles/infocorpsintuf/images/slide-01.jpg') }}" title="SINTUF-MT" alt="SINTUF-MT">
-        <p>Auctor augue adipiscing odio phasellus phasellus, rhoncus ut odio in? Montes parturient duis et, pulvinar? Enim nec tortor, nunc nunc! Elementum diam, nec cursus facilisis tristique est montes vut nunc, placerat</p>
-      </li>
-      <li class="content_news">
-        <h3>Dolor rhoncus, amet in, turpis dapibus!</h3>
-        <img src="{{ asset('bundles/infocorpsintuf/images/slide-01.jpg') }}" title="SINTUF-MT" alt="SINTUF-MT">
-        <p>Auctor augue adipiscing odio phasellus phasellus, rhoncus ut odio in? Montes parturient duis et, pulvinar? Enim nec tortor, nunc nunc! Elementum diam, nec cursus facilisis tristique est montes vut nunc, placerat</p>
-      </li>
-    </ul>
+      <header id="header">
+      <div class="container">
+          <div class="row">
+              <div class="span2 logo">
+                  <a href="{{ path('infocorp_sintuf_homepage') }}"><img src="{{ asset('bundles/infocorpsintuf/images/logo1.png') }}" alt="logo"></a>
+              </div>
+              <div class="span10 description">
+                  <a href="{{ path('infocorp_sintuf_homepage') }}" class="alignright description">
+                      <h1>Sindicato dos Trabalhadores Técnico-Administrativos em Educação da Universidade Federal de Mato Grosso</h1>
+                  </a>
+              </div>
+          </div>
 
-  </div>
-{% endblock %}
+          {% block menu%}
 
-     {% block media_social %}
-      <div id="media_social">
-        <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FSintufMT&amp;width=292&amp;height=590&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=true&amp;show_border=true&amp;appId=289289821083335" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:590px;" allowTransparency="true"></iframe>
+            <nav id="menu">
+              <ul class="clearfix sf-js-enabled sf-shadow">
+                  <li><a href="{{ path('infocorp_sintuf_homepage') }}" class="current">Início</a></li>
+                  
+                  <li class=""><a href="./about.html" class="sf-with-ul">Institucional</a>
+                      <ul style="display: none; visibility: hidden;">
+                          <li><a href="./about.html">Sobre nós</a></li>
+                          <li class="last"><a href="./services.html">Nossos serviços</a></li>
+                      </ul>
+                  </li>
+                  <li class=""><a href="./portfolio2.html" class="sf-with-ul">Comunicação</a>
+                      <ul style="display: none; visibility: hidden;">
+                          <li><a href="./portfolio2.html" class="sf-with-ul">Jornal</a>
+                              <ul style="display: none; visibility: hidden;">
+                                  <li><a href="./portfolio2.html">Categoria 1</a></li>
+                                  <li class="last"><a href="./portfolio2ex.html">Categoria 2</a></li>
+                              </ul>
+                          </li>
+                          <li><a href="./portfolio3.html" class="sf-with-ul">Notícias</a>
+                              <ul style="display: none; visibility: hidden;">
+                                  <li><a href="./portfolio3.html">Categoria 1</a></li>
+                                  <li class="last"><a href="./portfolio3ex.html">Categoria 2</a></li>
+                              </ul>
+                          </li>
+                          <li class="last"><a href="./portfolio4.html" class="sf-with-ul">Imprensa</a>
+                              <ul style="display: none; visibility: hidden;">
+                                  <li><a href="./portfolio4.html">Categoria 1</a></li>
+                                  <li class="last"><a href="./portfolio4ex.html">Categoria 2</a></li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </li>
+                  <li><a href="./blog.html" class="sf-with-ul">Jurídico</a>
+                      <ul style="display: none; visibility: hidden;">
+                          <li><a href="./blog.html">Processos</a></li>
+                          <li class="last"><a href="./blog-single.html">Legislação</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="{{ path('infocorp_sintuf_fale_conosco') }}">Contato</a></li>
+          </nav>
+
+          {% endblock %}
+
       </div>
+      </header>
+    
     {% endblock %}
 
-{% block parceiros %}
+    {% block content_site %}
   
+    <section id="container">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="row">
+                    <!-- page content -->
+                    <section id="page-sidebar" class="alignleft span8">
+                        <!-- slider -->
+                        <div class="row">
+                            <div class="span8">
+                                <div id="mainslider" class="flexslider">
+                                    
+                                <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 600%; margin-left: -1528px;">
+                                        <li style="width: 764px; height: 400px; float: left; display: block;" class="">
+                                            <img src="{{ asset('bundles/infocorpsintuf/images/sintuf1.jpg') }}" alt="photo">
+                                            <h3><span>Lorem Ipsum Dolor Sit Amet</span><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</a></h3>
+                                        </li>
+                                        <li style="width: 764px; height: 400px; float: left; display: block;" class="">
+                                            <img src="{{ asset('bundles/infocorpsintuf/images/sintuf2.jpg') }}" alt="photo">
+                                            <h3><span>Fusce consequat eleifend diam </span><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</a></h3>
+                                        </li>
+                                        <li style="width: 764px; height: 400px; float: left; display: block;" class="flex-active-slide">
+                                            <img src="{{ asset('bundles/infocorpsintuf/images/sintuf3.jpg') }}" alt="photo">
+                                            <h3><span>Donec elementum tortor</span><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</a></h3>
+                                        </li>
+                                    </ul></div><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next flex-disabled" href="#">Next</a></li></ul></div>
+                            </div>
+                        </div>
+                        <!-- content -->
+                        <div class="row">
+                            <div class="span8">
+                                <div class="title-divider">
+                                    <div class="divider-arrow"></div>
+                                </div>
+                            </div>
+                            <article class="blog-post span2">
+                                <div class="block-grey">
+                                    <div class="block-light">
+                                        <div class="wrapper">
+                                            <h3 class="post-title">
+                                              <a href="#">
+                                                <img src="{{ asset('bundles/infocorpsintuf/images/cadastro1.png') }}" alt="photo">Afilie-se
+                                              </a>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="blog-post span2">
+                                <div class="block-grey">
+                                    <div class="block-light">
+                                        <div class="wrapper">
+                                            <h3 class="post-title">
+                                              <a href="#">
+                                                <img src="{{ asset('bundles/infocorpsintuf/images/downloads1.png') }}" alt="photo">Downloads
+                                              </a>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="blog-post span2">
+                                <div class="block-grey">
+                                    <div class="block-light">
+                                        <div class="wrapper">
+                                            <h3 class="post-title">
+                                              <a href="#">
+                                                <img src="{{ asset('bundles/infocorpsintuf/images/convenios1.png') }}" alt="photo">Convênios
+                                              </a>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="blog-post span2">
+                                <div class="block-grey">
+                                    <div class="block-light">
+                                        <div class="wrapper">
+                                            <h3 class="post-title">
+                                              <a href="#">
+                                                <img src="{{ asset('bundles/infocorpsintuf/images/corpo_diretor1.png') }}" alt="photo">Direção
+                                              </a>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- special offer -->
+                        <!-- <div class="row">
+                            <div class="span8">
+                                <div class="title-divider">
+                                    <h3>Special Offer</h3>
+                                    <div class="divider-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="span8">
+                                <div class="block-grey wrap15">
+                                    <section id="welcome">
+                                        <div class="row">
+                                            <div class="span5">
+                                                <h1>Lorem Ipsum Dolor Sit Amet</h1>
+                                                <p class="last">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut lagna aliquam erat volutpat.</p>
+                                            </div>
+                                            <div class="span2 clearfix">
+                                                <a class="btn btn-success btn-large" href="#">Buy Now</a>
+                                            </div>
+                                        </div>
+
+
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                        </div> -->
+                        <!-- education news -->
+                        <div class="row">
+                            <div class="span8 education-news">
+                                <div class="title-divider">
+                                    <h3>Notícias e Galerias</h3>
+                                    <div class="divider-arrow"></div>
+                                </div>
+                                <div class="block-grey">
+                                    <div class="block-light wrap15">
+                                        <div class="row">
+                                            <div class="span2">
+                                                <a href="./portfolio2.html"><img alt="photo" src="{{ asset('bundles/infocorpsintuf/images/sintuf4.jpg') }}"></a>
+                                            </div>
+                                            <div class="span5">
+                                                <h2 class="post-title"><a href="#">Lorem ipsum</a></h2>
+                                                <a class="blog-comments" href="#">3</a>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tdolore mag quamr sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tdolore mag quam erat volutpat.
+                                                    <a class="read-more" href="#">[...]</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap15 clearfix">
+                                        <div class="percent-50">
+                                            <ul class="color2 list-style-2">
+                                                <li>Lorem ipsum dolor sit amet, consectetuer</li>
+                                                <li>Sed diam nonummy nibh euismod tdolore</li>
+                                                <li>Sit amet, consectetuer adipiscing elit, sed</li>
+                                                <li>Nummy nibh euismod tdolore mag quam</li>
+                                            </ul>
+                                        </div>
+                                        <div class="percent-50">
+                                            <ul class="color2 list-style-2">
+                                                <li>Lorem ipsum dolor sit amet, consectetuer</li>
+                                                <li>Sed diam nonummy nibh euismod tdolore</li>
+                                                <li>Sit amet, consectetuer adipiscing elit, sed</li>
+                                                <li>Nummy nibh euismod tdolore mag quam</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                        </div>
+                        <!-- portfolio slider -->
+
+                            <div class="row">
+                            <div class="span8">
+                                <div class="title-divider">
+
+                                    <div class="divider-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="span8">
+                                <div class="block-grey our-portfolio">
+                                  <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FSintufMT&amp;width=700&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=false&amp;appId=289289821083335" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:700px; height:290px;" allowTransparency="true"></iframe>
+                                </div>
+                                </div>
+                            </div>
+
+
+
+<!--                         <div class="row">
+                            <div class="span8">
+                                <div class="title-divider">
+                                    <h3>Portfolio Slider</h3>
+                                    <div class="divider-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="span8">
+                                <div class="block-grey our-portfolio">
+                                    <div class="block-light wrap10">
+                                        <div id="latest-work" class="carousel btleft">
+                                        <div class="carousel-wrapper">
+                                            <ul class="da-thumbs-folio" style="width: 1486px; display: block; margin-left: 0px;">
+                                                <li style="margin-right: 10px; width: 235px; height: 216px;">
+                                                    <img src="{{ asset('bundles/infocorpsintuf/images/sintuf6.jpg') }}">
+                                                    <h3>Creative Ideas</h3>
+                                                    <div>
+                                                        <a href="{{ asset('bundles/infocorpsintuf/images/view.jpg') }}" class="p-view" data-rel="prettyPhoto" rel="prettyPhoto"></a>
+                                                        <a href="blog-single.html" class="p-link"></a>
+                                                    </div>
+                                                </li>
+                                                <li style="margin-right: 10px; width: 235px; height: 216px;">
+                                                    <img src="{{ asset('bundles/infocorpsintuf/images/sintuf7.jpg') }}">
+                                                    <h3>Twitter? or...</h3>
+                                                    <div>
+                                                        <a href="{{ asset('bundles/infocorpsintuf/images/view.jpg') }}" class="p-view" data-rel="prettyPhoto" rel="prettyPhoto"></a>
+                                                        <a href="blog-single.html" class="p-link"></a>
+                                                    </div>
+                                                </li>
+                                                <li style="margin-right: 10px; width: 235px; height: 150px;">
+                                                    <img src="{{ asset('bundles/infocorpsintuf/images/sintuf8.jpg') }}">
+                                                    <h3>water painting</h3>
+                                                    <div>
+                                                        <a href="{{ asset('bundles/infocorpsintuf/images/view.jpg') }}" class="p-view" data-rel="prettyPhoto" rel="prettyPhoto"></a>
+                                                        <a href="blog-single.html" class="p-link"></a>
+                                                    </div>
+                                                </li>
+                                                <li style="margin-right: 10px; width: 235px; height: 216px;">
+                                                    <img src="{{ asset('bundles/infocorpsintuf/images/sintuf9.jpg') }}">
+                                                    <h3>Creative Ideas</h3>
+                                                    <div>
+                                                        <a href="{{ asset('bundles/infocorpsintuf/images/view.jpg') }}" class="p-view" data-rel="prettyPhoto" rel="prettyPhoto"></a>
+                                                        <a href="blog-single.html" class="p-link"></a>
+                                                    </div>
+                                                </li>
+                                                <li style="margin-right: 10px; width: 235px;">
+                                                    <img src="{{ asset('bundles/infocorpsintuf/images/latest5.jpg') }}">
+                                                    <h3>Creative Ideas</h3>
+                                                    <div>
+                                                        <a href="{{ asset('bundles/infocorpsintuf/images/view.jpg') }}" class="p-view" data-rel="prettyPhoto" rel="prettyPhoto"></a>
+                                                        <a href="blog-single.html" class="p-link"></a>
+                                                    </div>
+                                                </li>
+                                                <li style="margin-right: 10px; width: 235px;">
+                                                    <img src="{{ asset('bundles/infocorpsintuf/images/latest6.jpg') }}">
+                                                    <h3>Creative Ideas</h3>
+                                                    <div>
+                                                        <a href="{{ asset('bundles/infocorpsintuf/images/view.jpg') }}" class="p-view" data-rel="prettyPhoto" rel="prettyPhoto"></a>
+                                                        <a href="blog-single.html" class="p-link"></a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="es-nav"><span class="es-nav-prev" style="opacity: 0.5;">Previous</span><span class="es-nav-next" style="opacity: 1;">Next</span></div></div>
+                                        <script type="text/javascript">
+                                            $(document).ready(function(){
+                                                $('#latest-work').elastislide({
+                                                    imageW  : 235,
+                                                    margin  : 10
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+
+                                    <div class="short-text">
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh eui
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+ 
+
+
+
+
+                        </section>
+                    <!-- sidebar -->
+                    <aside id="sidebar" class="alignright span4">
+                        <!-- Search -->
+                        <section class="search clearfix">
+                            <form id="search" class="input-append">
+                                <input class="" id="appendedInputButton" size="16" type="text" value="Pesquisar..." name="search site" onfocus="if(this.value=='Pesquisar...') this.value=''" onblur="if(this.value=='') this.value='Search...'">
+                                <input class="btn search-bt" type="submit" name="submit" value="">
+                            </form>
+                        </section>
+                        <!-- Tabs -->
+                        <section class="block-grey">
+                            <!-- Tabs navigation -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#blog" data-toggle="tab">Recentes</a></li>
+                                <li><a href="#comments" data-toggle="tab">Comentários</a></li>
+                            </ul>
+                            <!-- Tabs content -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="blog">
+                                    <section class="post-widget">
+                                        <ul class="clearfix">
+                                            <li>
+                                                <div class="avatar">
+                                                    <a href="#"><img src="{{ asset('bundles/infocorpsintuf/images/sidebar1.jpg') }}" alt="photo"></a>
+                                                </div>
+                                                <div class="description">
+                                                    <p><a href="blog-single.html">Etiam sagittis purus quis neque pharetra pretium tempor</a></p>
+                                                    <span class="date"><em>12 Apr 2012, 3 comments</em></span>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li>
+                                                <div class="avatar">
+                                                    <a href="#"><img src="{{ asset('bundles/infocorpsintuf/images/sidebar2.jpg') }}" alt="photo"></a>
+                                                </div>
+                                                <div class="description">
+                                                    <p><a href="blog-single.html">Maecenas malesuada convallis varius. Duis nec luctus leo nam venenatis</a></p>
+                                                    <span class="date"><em>12 Apr 2012, 3 comments</em></span>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li>
+                                                <div class="avatar">
+                                                    <a href="#"><img src="{{ asset('bundles/infocorpsintuf/images/sidebar3.jpg') }}" alt="photo"></a>
+                                                </div>
+                                                <div class="description">
+                                                    <p><a href="blog-single.html">Donec feugiat luctus sem malesuada sodales praesent rutrum enim eget</a></p>
+                                                    <span class="date"><em>12 Apr 2012, 3 comments</em></span>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                </div>
+                                
+                                <div class="tab-pane" id="comments">
+                                    <section class="recent-comments">
+                                        <ul class="clearfix">
+                                            <li><a href="#">Admin</a> on <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                            <li><a href="#">ShmitAcc</a> on <a href="#">Lorem Ipsum Sed Ut</a></li>
+                                            <li><a href="#">Admin</a> on <a href="#">Lorem Ipsum Sed Ut</a></li>
+                                            <li><a href="#">Admin</a> on <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                            <li><a href="#">ShmitAcc</a> on <a href="#">Lorem Ipsum Sed Ut</a></li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Video block -->
+                        <div class="title-divider">
+                            <h3>Vídeo</h3>
+                            <div class="divider-arrow"></div>
+                        </div>
+                        <section class="block-dark">
+                            <div class="video">
+                                <iframe src="http://player.vimeo.com/video/35396305" width="100%" height="100%" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                            </div>
+                        </section>
+                        <!-- Parceiros -->
+                        <div class="title-divider">
+                            <h3>Parceiros</h3>
+                            <div class="divider-arrow"></div>
+                        </div>
+                        <section class="post-widget block-grey">
+                            <ul class="clearfix block-light wrap15">
+                                <li>
+                                    <a href="#"><img src="{{ asset('bundles/infocorpsintuf/images/sidebar1.jpg') }}" alt="photo"></a>
+                                    <a href="#">Ut in lacus rhoncus elit egesta sluctus. Nullam at</a>
+                                    <p><em>12 Apr 2012, 3 comments</em></p>
+                                    <div class="clear"></div>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{{ asset('bundles/infocorpsintuf/images/sidebar2.jpg') }}" alt="photo"></a>
+                                    <a href="#">Ut in lacus rhoncus elit egesta sluctus. Nullam at</a>
+                                    <p><em>12 Apr 2012, 3 comments</em></p>
+                                    <div class="clear"></div>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{{ asset('bundles/infocorpsintuf/images/sidebar3.jpg') }}" alt="photo"></a>
+                                    <a href="#">Ut in lacus rhoncus elit egesta sluctus. Nullam at</a>
+                                    <p><em>12 Apr 2012, 3 comments</em></p>
+                                    <div class="clear"></div>
+                                </li>
+                            </ul>
+                        </section>
+                        <!-- Advertisment -->
+                        <div class="title-divider">
+                            <h3>Anúncios</h3>
+                            <div class="divider-arrow"></div>
+                        </div>
+                        <section class="block-dark">
+                            <img src="{{ asset('bundles/infocorpsintuf/images/adv.gif') }}" alt="">
+                        </section>
+                        <!-- Advertisment -->
+                        <div class="title-divider">
+
+                            <div class="divider-arrow"></div>
+                        </div>
+                        <section class="block-dark">
+                            <img src="{{ asset('bundles/infocorpsintuf/images/adv.gif') }}" alt="">
+                        </section>
+                        
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
+
+  {% block footer %}
+    <footer id="footer">
+    <div class="container">
+    <div class="row">
+        <div class="span2">
+            <section class="block-dark">
+              <img src="{{ asset('bundles/infocorpsintuf/images/35.png') }}" alt="">
+            </section>
+        </div>
+        <div class="span6">
+          <p>Av. Fernando Corrêa da Costa, s/nº. - Campus Universitário - Coxipó - MT - 78060-900</p>
+          <p>Tel: (65) 3028-2924 | Fax: (65) 3028-2925</p>
+          <p>sintuf@terra.com.br / sintuf@ufmt.br</p>
+          
+        </div>
+        <div class="span4">
+            <h3>Contato</h3>
+            <form id="contact" class="form-horizontal" method="post">
+                <div class="controls">
+                    <input type="text" id="inputName" placeholder="Name" name="inputName">
+                    <label class="ferror" for="inputName" id="fname_error" style="display: none;">Name is required.</label>
+                </div>
+                <div class="controls">
+                    <input type="text" id="inputEmail" placeholder="Email" name="inputEmail">
+                    <label class="ferror" for="inputEmail" id="femail_error" style="display: none;">Email is required.</label>
+                </div>
+                <div class="controls">
+                    <textarea rows="3" id="inputMessage" placeholder="Message" name="inputMessage"></textarea>
+                    <label class="ferror" for="inputMessage" id="fmessage_error" style="display: none;">Message is required.</label>
+                </div>
+                <div class="controls">
+                    <input type="submit" class="btn btn-success btn-large footer-button" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</footer>
+  {% endblock %}
+
+  {% block menu_footer %}
+
+  <section id="footer-menu">
+    <div class="container">
+        <div class="row">
+            <p class="span12"><span>© Copyright 2013, <span class="color2">SINTUF-MT</span> | Todos os direitos reservados | Desenvolvido por Infocorp - Empresa Júnior</span></p>
+
+        </div>
+    </div>
+</section>
+
+  {% endblock %}
+
+  {% block vai_topo %}
+
+  <a href="#" id="toTop" style="display: inline;"><span id="toTopHover"></span>To Top</a>
+
+  {% endblock %}
 
 {% endblock %}

@@ -5,70 +5,167 @@
   {% block stylesheets %}
     {% stylesheets 
       'bundles/infocorpsintuf/css/style.css'
+      'bundles/infocorpsintuf/css/prettyPhoto.css'
       'bundles/infocorpsintuf/css/bootstrap/bootstrap.min.css'
       'bundles/infocorpsintuf/css/bootstrap/bootstrap-responsive.css'
       'bundles/infocorpsintuf/css/normalize.css'
       filter='cssrewrite' 
     %}
       <link rel="stylesheet" href="{{ asset_url }}">
+      <link href='http://fonts.googleapis.com/css?family=Tinos:400,700' rel='stylesheet' type='text/css'>
     {% endstylesheets %}
   {% endblock %}
 
   
 </head>
-<body>  
-    {% block header %}
-      <header>
-        <div class="header_top">
-          <div class="header_desc">
-            <h1>Sindicato dos Trabalhadores Técnico-Administrativos em Educação da Universidade Federal de Mato Grosso</h1>
-          </div>
-          <div class="logo">
-            <a href="{{ path('infocorp_sintuf_homepage') }}" title="SINTUF-MT" alt="SINTUF-MT"><img src="{{ asset('bundles/infocorpsintuf/images/logo1.png') }}" title="SINTUF-MT" alt="SINTUF-MT"></a>
-          </div>
-        </div>
-        <!-- {{ knp_menu_render('InfocorpSintufBundle:MenuBuilder:testMenu') }} -->
-        <div class="menu_sup">
-          <ul>
-            <li><a href="{{ path('infocorp_sintuf_homepage') }}">Home</a></li>
-            <li><a href="#">Comunicação</a></li>
-            <li><a href="#">Jurídico</a></li>
-            <li><a href="#">Convênios</a></li>
-            <li><a href="#">Sindical</a></li>
-            <li><a href="{{ path('infocorp_sintuf_fale_conosco') }}">Contato</a></li>
-          </ul>
-        </div>
-        
-      </header>
-    {% endblock %}
+<body>
+  {% block content%}
 
-    <div class="row-fluid">
-    {% block content %}
-    {% endblock %}
-    </div>
+
+
+  {% endblock %}<!--/container-->
+
+      {% block javascripts %}
+      {% javascripts 
+        'bundles/infocorpsintuf/js/bootstrap.min.js'
+        'bundles/infocorpsintuf/js/jquery.easing.1.3.js'
+        'bundles/infocorpsintuf/js/hoverIntent.js'
+        'bundles/infocorpsintuf/js/jquery.hoverdir.js'
+        'bundles/infocorpsintuf/js/accordion.settings.js'
+        'bundles/infocorpsintuf/js/jquery.ui.totop.js'
+        'bundles/infocorpsintuf/js/ajax-mail.js'
+        'bundles/infocorpsintuf/js/jquery.elastislide.js'
+        'bundles/infocorpsintuf/js/jquery.flexslider.js'
+        'bundles/infocorpsintuf/js/jquery.prettyPhoto.js'
+        'bundles/infocorpsintuf/js/jquery.quicksand.js'
+        'bundles/infocorpsintuf/js/smoothscroll.js'
+        'bundles/infocorpsintuf/js/superfish.js'
+      %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="{{ asset_url }}"></script>
+
+         <script>
+        //   !function ($) {
+        //     $(function(){
+        //       // carousel demo
+        //       $('#myCarousel').carousel();
+        //       $('#myCarouselParceiros').carousel();
+        //     })
+        //   }(window.jQuery)
+        //Menu
+ //Menu
+    jQuery('#menu > ul').superfish({ 
+        delay:       1000,                           
+        animation:   {opacity:'show', height:'show'}, 
+        speed:       'fast',                          
+        autoArrows:  true
+
+    });
+    $('.sf-sub-indicator').remove();
+    (function() {
+    var $menu = $('#menu ul'),
+      optionsList = '<option value="" selected>Menu...</option>';
+
+    $menu.find('li').each(function() {
+      var $this   = $(this),
+        $anchor = $this.children('a'),
+        depth   = $this.parents('ul').length - 1,
+        indent  = '';
+
+      if( depth ) {
+        while( depth > 0 ) {
+          indent += ' - ';
+          depth--;
+        }
+      }
+      optionsList += '<option value="' + $anchor.attr('href') + '">' + indent + ' ' + $anchor.text() + '</option>';
+    }).end()
+      .after('<select class="res-menu">' + optionsList + '</select>');
+
+    $('.res-menu').on('change', function() {
+      window.location = $(this).val();
+    });
     
+  })();
+    
+    $(".our-blog article").hover(function () {
+      $(this).find("img").stop(true, true).animate({ opacity: 0.7 }, 300);
+    }, function() {
+      $(this).find("img").stop(true, true).animate({ opacity: 1 }, 300);
+    });
+    </script>
+
+<script>
+
+$(window).each(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    useCSS: false,
+    controlNav: false,   
+    animationLoop: false,
+    smoothHeight: true
+  });
+});
+
+</script>
+
+<script>
+     // To Top Button
+    $(function(){
+        $().UItoTop({ easingType: 'easeOutQuart' });
+    });
+</script>
+
+<script>
+   $('.p2col .span6:even').addClass('no-margin-left');
+
+    //prettyPhoto
+    $('a[data-rel]').each(function() {
+        $(this).attr('rel', $(this).data('rel'));
+    });
+    $("a[rel^='prettyPhoto']").prettyPhoto();
 
 
-   {% block rodape %}
-      <div id="rodape"></div>
+    $('.da-thumbs > li, .da-thumbs > article').hoverdir();
+</script>
+
+<script>
+    //Portfolio
+  $(window).load(function(){
+  var $portfolioClone = $(".filtrable").clone();
+  $("#filtrable a").live('click', function(e){
+    
+    $("#filtrable li").removeClass("current");  
+    
+    var $filterClass = $(this).parent().attr("class");
+        var $filteredPortfolio = $portfolioClone.find("article");
+
+    if ( $filterClass == "all" ) {
+      $filteredPortfolio = $portfolioClone.find("article");
+    } else {
+      $filteredPortfolio = $portfolioClone.find("article[data-type~=" + $filterClass + "]");
+    }
+  
+    $(".filtrable").quicksand( $filteredPortfolio, { 
+      duration: 800, 
+      easing: 'easeOutQuint' 
+    }, function(){
+      
+            $('.da-thumbs > li, .da-thumbs > article, .da-thumbs > div').hoverdir();
+            
+            $("a[rel^='prettyPhoto']").prettyPhoto();
+
+    });
+
+    $(this).parent().addClass("current");
+        
+    e.preventDefault();
+  });
+  });
+
+</script>
+
+      {% endjavascripts %}
     {% endblock %}
-
-    {% block javascripts %}
-    {% javascripts 
-      'bundles/infocorpsintuf/js/bootstrap.min.js'
-    %}
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-      <script src="{{ asset_url }}"></script>
-      <script>
-        !function ($) {
-          $(function(){
-            // carousel demo
-            $('#myCarousel').carousel();
-            $('#myCarouselParceiros').carousel();
-          })
-        }(window.jQuery)
-      </script>
-    {% endjavascripts %}
-  {% endblock %}
 </body>
 </html>
