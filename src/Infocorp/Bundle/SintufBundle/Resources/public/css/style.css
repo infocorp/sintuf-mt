@@ -377,7 +377,7 @@ figure {
 .block-grey {
     background: #f2f2f2;
     border: solid 1px #cdcdcd;
-    padding: 5px;
+    padding: 0px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
