@@ -48,3 +48,5 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: Afiliados, label: Afiliados }
         arguments: [null, Infocorp\Bundle\SintufBundle\Entity\Affiliate, null]
+        calls:
+         - [setTemplate, [edit, InfocorpSintufBundle:Admin:affiliate_edit.html.twig]]
