@@ -62,7 +62,7 @@ class Affiliate
     /**
      * @var string
      *
-     * @ORM\Column(name="dictrict", type="string", length=50)
+     * @ORM\Column(name="district", type="string", length=50)
      */
     private $district;
 
@@ -286,7 +286,7 @@ class Affiliate
     /**
      * @var ArrayColletion
      * 
-     * @ORM\OneToMany(targetEntity="Dependent", mappedBy="affiliate")
+     * @ORM\OneToMany(targetEntity="Dependent", mappedBy="affiliate", cascade="persist")
      */
     private $dependents;
 
@@ -404,9 +404,9 @@ class Affiliate
      * @param string $dictrict
      * @return Affiliate
      */
-    public function setDistrict($dictrict)
+    public function setDistrict($district)
     {
-        $this->dictrict = $dictrict;
+        $this->district = $district;
     
         return $this;
     }
@@ -418,7 +418,7 @@ class Affiliate
      */
     public function getDistrict()
     {
-        return $this->dictrict;
+        return $this->district;
     }
 
     /**
@@ -1162,7 +1162,7 @@ class Affiliate
      * 
      * @return Affiliate
      */
-    public function addDependents(Dependent $dependent)
+    public function addDependent(Dependent $dependent)
     {
     	$dependent->setAffiliate($this);
     	$this->dependents->add($dependent);
@@ -1170,7 +1170,7 @@ class Affiliate
     	return $this;
     }
 
-    public function removeDependents(Dependent $dependent)
+    public function removeDependent(Dependent $dependent)
     {
     	$this->dependents->removeElement($dependent);
 
