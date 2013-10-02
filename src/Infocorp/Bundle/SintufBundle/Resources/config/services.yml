@@ -42,3 +42,9 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: Site, label: Menu }
         arguments: [null, Infocorp\Bundle\SintufBundle\Entity\Menu, null]
+
+    sonata.admin.affiliate:
+        class: Infocorp\Bundle\SintufBundle\Admin\AffiliateAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Afiliados, label: Afiliados }
+        arguments: [null, Infocorp\Bundle\SintufBundle\Entity\Affiliate, null]
