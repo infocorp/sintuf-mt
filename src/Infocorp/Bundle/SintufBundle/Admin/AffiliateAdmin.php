@@ -97,6 +97,7 @@ class AffiliateAdmin extends Admin
                 'allow_add' => true,
                 'by_reference' => false,
                 'allow_delete' => true,
+                'required' => false,
             ))
         ;
     }

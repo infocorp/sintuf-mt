@@ -50,3 +50,4 @@ services:
         arguments: [null, Infocorp\Bundle\SintufBundle\Entity\Affiliate, null]
         calls:
          - [setTemplate, [edit, InfocorpSintufBundle:Admin:affiliate_edit.html.twig]]
+         - [setTemplate, [create, InfocorpSintufBundle:Admin:affiliate_create.html.twig]]
