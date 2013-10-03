@@ -1,0 +1,36 @@
+{% extends 'InfocorpSintufBundle::layout.html.twig' %}
+
+{% block content %}
+  
+  <div class="row-fluid">
+   	<div class="span2">
+      <ul class="nav nav-list">
+        <li class="nav-header">Direção</li>
+          <li>
+              {{ director.title }}
+          </li>
+      </ul>
+    </div>
+
+  	<div class="span10">
+  		<article>
+  		  <h1 class="title-direction">
+  		    {{ director.title }}
+  		  </h1>
+
+        <div class="description-direction">
+          {{ director.description | raw }}
+        </div>
+
+        <div class="image-direction">
+          {% thumbnail director.image, 'small' %}
+        </div>  
+
+  		  <div class="content-direction">
+  		    {{ director.content | raw }}
+  			</div>	    
+      </article>
+  	</div>
+  </div>
+
+{% endblock %}

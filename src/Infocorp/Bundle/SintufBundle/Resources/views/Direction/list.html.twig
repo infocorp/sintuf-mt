@@ -1,9 +1,38 @@
 {% extends 'InfocorpSintufBundle::layout.html.twig' %}
 {% block content %}
-<ul class="nav_institucional">
-  <li class="servicos_inst"><strong>Direção</strong></li>
-  {% for direction in directions %}
-    <li><a href="{{ path('infocorp_sintuf_direction_view', {slug: direction.slug}) }}">{{ direction.title }}</a></li>
-  {% endfor %}
-</ul>
+
+
+
+	<div class="container">
+		<div class="row">
+
+			  {% for direction in directions %}
+
+					<div class="span6">
+						<div class="row">
+					  	<div class="span2">
+					  		<div class="alignright thumbnail">
+		            	{% media direction.image, 'small' %}
+		            </div>
+		          </div>
+		          <div class="span4">
+		          	<blockquote>
+		          		<i class="icon-user"></i>
+		            	<a href="{{ path('infocorp_sintuf_direction_view', {slug: direction.slug}) }}">{{ direction.title }}</a><br>
+		            	<cite>{{ direction.description }}</cite>
+		            </blockquote>
+							</div>  
+						</div><br>
+					</div>
+
+			    <!-- <li><a href="{{ path('infocorp_sintuf_direction_view', {slug: direction.slug}) }}">{{ direction.title }}</a>
+			    </li> -->
+
+			  {% endfor %}
+
+		</div>
+	</div>
+
+
+
 {% endblock %}

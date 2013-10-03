@@ -1,47 +1,64 @@
 {% extends 'InfocorpSintufBundle::layout.html.twig' %}
 
 {% block content %}
-  <ul class="breadcrumb">
-    <li><a href="{{ path('infocorp_sintuf_homepage') }}">Home</a><span class="divider">/</span></li>
-    {% if subpage %}
-      <li><a href="{{ path('infocorp_sintuf_noticias') }}">Notícias</a><span class="divider">/</span></li>
-      <li class="active">Categorias</li>
-    {% else %}
-      <li class="active">Notícias</li>
-    {% endif %}
-  </ul>
-  
-  <div class="row-fluid">
-    <div class="span2">
-      <ul class="nav nav-list">
-        <li class="nav-header">Categorias</li>
-        {% for category in categories %}
-          <li>
-            <a href="{{ path('infocorp_sintuf_noticias_categoria', { 'slug': category.slug }) }}">
-              {{ category.name }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
 
-    <div class="span10">
-      {% for item in news %}
-        <div class="news-wrap">
-          <a href="{{ path('infocorp_sintuf_noticia', { 'slug': item.slug }) }}">
-            {% media item.image, 'reference' %}
-          </a>
-          <div class="news-text">
-            <a href="{{ path('infocorp_sintuf_noticia', { 'slug': item.slug }) }}">
-              <h2>{{ item.title }}</h2>
-            </a>
-            <p>{{ item.abstract }}</p>
-            {# PARA ACESSAR A QUANTIDADE DE COMENTARIOS DE CADA POST
-              {{ item.commentsCount }}
-             #}
+<div class="container">
+  <div class="row-fluid">
+    <ul class="breadcrumb">
+      <li><a href="{{ path('infocorp_sintuf_homepage') }}">Home</a><span class="divider">/</span></li>
+      {% if subpage %}
+        <li><a href="{{ path('infocorp_sintuf_noticias') }}">Notícias</a><span class="divider">/</span></li>
+        <li class="active">Categorias</li>
+      {% else %}
+        <li class="active">Notícias</li>
+      {% endif %}
+    </ul>
+    <div class="span12">
+      <div class="row">
+
+        <div class="span2">
+          <ul class="nav nav-list">
+            <li class="nav-header">Categorias</li>
+            {% for category in categories %}
+              <li>
+                <a href="{{ path('infocorp_sintuf_noticias_categoria', { 'slug': category.slug }) }}">
+                  {{ category.name }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="span10">
+          <div class="row-fluid alignright">
+            {% for item in news %}
+              <div class="span12">
+                <div class="row-fluid">
+                  <div class="span4">
+                    <div class="alignright thumbnail">
+                      {% media item.image, 'reference' %}
+                    </div>
+                  </div>
+                  <div class="span8">
+                    <blockquote>
+                      <a href="{{ path('infocorp_sintuf_noticia', {slug: item.slug}) }}">{{ item.title }}</a><br>
+                      <cite>{{ item.abstract }}<p></cite>
+                      <small><i class="icon-comment"></i>{{ item.commentsCount }} Comentários</p></small>
+                    </blockquote>
+                  </div>  
+                </div><br>
+              </div>
+            {% endfor %}
           </div>
         </div>
-      {% endfor %}
+
+      </div>
     </div>
   </div>
+</div>
 {% endblock %}
+
+
+{# PARA ACESSAR A QUANTIDADE DE COMENTARIOS DE CADA POST
+                        {{ item.commentsCount }}
+                       #}

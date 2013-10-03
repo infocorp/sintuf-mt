@@ -4,6 +4,7 @@ namespace Infocorp\Bundle\SintufBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Sonata\NewsBundle\Model\Tag;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Direction
@@ -78,6 +79,21 @@ class Direction
      * @ORM\Column(name="description", type="text")
      */
     private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="link", type="string", length=255)
+     */
+    private $link;
+
+    /**
+     * @var string
+     * 
+     * @ORM\Column(name="email", type="string", length=100)
+     * @Assert\Email(message="Por favor, informe um email válido")
+     */
+    private $email;
 
 
     /**
@@ -270,5 +286,51 @@ class Direction
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set link
+     *
+     * @param string $link
+     * @return Direction
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+    
+        return $this;
+    }
+
+    /**
+     * Get link
+     *
+     * @return string 
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return Direciton
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 }

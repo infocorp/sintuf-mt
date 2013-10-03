@@ -1,19 +1,23 @@
-<ul class="nav_tab_right">
-  {% for item in news %}
-    {% if loop.first %}
-      <li>
-        <a href="{{ path('infocorp_sintuf_noticia', {slug: item.slug}) }}">
-          <strong>{{ item.title }}</strong>
-        </a>
-        <p>{{ item.abstract }}</p>
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
-<ul class="nav_tab_left">
-  {% for item in news %}
-    {% if not loop.first %}
-      <li><a href="{{ path('infocorp_sintuf_noticia', {slug: item.slug}) }}">{{ item.title|slice(0, 35) }}</a></li>
-    {% endif %}
-  {% endfor %}
-</ul>
+<div class="tab-pane active" id="blog">
+    <section class="post-widget">
+        <ul class="clearfix">
+          {% for item in news %}
+          {% if not loop.first %}
+            <li>
+                <div class="avatar">
+                    <a href="{{ path('infocorp_sintuf_noticia', {slug: item.slug}) }}"><div class="thumbnail pull-right">{% media item.image, 'small' %}</div></a>
+                </div>
+                
+                  <div class="description">
+                      <p><a href="{{ path('infocorp_sintuf_noticia', {slug: item.slug}) }}">{{ item.title|slice(0, 50) }}</a></p>
+                      <span class="date"><em>12 Apr 2012, {{ item.commentsCount }} comentários</em></span>
+                  </div>
+
+                <div class="clear"></div>
+            </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+    </section>
+</div>
+

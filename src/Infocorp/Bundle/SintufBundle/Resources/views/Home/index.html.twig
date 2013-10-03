@@ -43,7 +43,7 @@
                                     <div class="block-light">
                                         <div class="wrapper">
                                             <h3 class="post-title">
-                                              <a href="#">
+                                              <a href="{{ path('sintuf_affiliate') }}">
                                                 <img src="{{ asset('bundles/infocorpsintuf/images/cadastro1.png') }}" alt="photo">Afilie-se
                                               </a>
                                             </h3>
@@ -56,7 +56,7 @@
                                     <div class="block-light">
                                         <div class="wrapper">
                                             <h3 class="post-title">
-                                              <a href="#">
+                                              <a href="{{ path('infocorp_sintuf_homepage') }}">
                                                 <img src="{{ asset('bundles/infocorpsintuf/images/downloads1.png') }}" alt="photo">Downloads
                                               </a>
                                             </h3>
@@ -69,7 +69,7 @@
                                     <div class="block-light">
                                         <div class="wrapper">
                                             <h3 class="post-title">
-                                              <a href="#">
+                                              <a href="{{ path('infocorp_sintuf_covenant_list') }}">
                                                 <img src="{{ asset('bundles/infocorpsintuf/images/convenios1.png') }}" alt="photo">Convênios
                                               </a>
                                             </h3>
@@ -82,7 +82,7 @@
                                     <div class="block-light">
                                         <div class="wrapper">
                                             <h3 class="post-title">
-                                              <a href="#">
+                                              <a href="{{ path('infocorp_sintuf_direction_list') }}">
                                                 <img src="{{ asset('bundles/infocorpsintuf/images/corpo_diretor1.png') }}" alt="photo">Direção
                                               </a>
                                             </h3>
@@ -137,14 +137,14 @@
                                                         <div id="myCarousel" class="carousel slide">
                                                                 <!-- Carousel items -->
                                                                 <div class="carousel-inner">
-                                                                        <div class="active item" data-slide-number="0"><img src="http://placehold.it/770x300&text=one" /></div>
-                                                                        <div class="item" data-slide-number="1"><img src="http://placehold.it/770x300&text=two" /></div>
-                                                                        <div class="item" data-slide-number="2"><img src="http://placehold.it/770x300&text=three" /></div>
-                                                                        <div class="item" data-slide-number="3"><img src="http://placehold.it/770x300&text=four" /></div>
-                                                                        <div class="item" data-slide-number="4"><img src="http://placehold.it/770x300&text=five" /></div>
-                                                                        <div class="item" data-slide-number="5"><img src="http://placehold.it/770x300&text=six" /></div>
-                                                                        <div class="item" data-slide-number="6"><img src="http://placehold.it/770x300&text=seven" /></div>
-                                                                        <div class="item" data-slide-number="7"><img src="http://placehold.it/770x300&text=eight" /></div>
+                                                                        <div class="active item" data-slide-number="0" style="width: 470px; height: 183px;"><img src="{{ asset('bundles/infocorpsintuf/images/sintuf1.jpg') }} " /></div>
+                                                                        <div class="item" data-slide-number="1" style="width: 470px; height: 183px;"><img src="{{ asset('bundles/infocorpsintuf/images/sintuf2.jpg') }}" /></div>
+                                                                        <div class="item" data-slide-number="2" style="width: 470px; height: 183px;"><img src="http://placehold.it/770x300&text=three" /></div>
+                                                                        <div class="item" data-slide-number="3" style="width: 470px; height: 183px;"><img src="http://placehold.it/770x300&text=four" /></div>
+                                                                        <div class="item" data-slide-number="4" style="width: 470px; height: 183px;"><img src="http://placehold.it/770x300&text=five" /></div>
+                                                                        <div class="item" data-slide-number="5" style="width: 470px; height: 183px;"><img src="http://placehold.it/770x300&text=six" /></div>
+                                                                        <div class="item" data-slide-number="6" style="width: 470px; height: 183px;"><img src="http://placehold.it/770x300&text=seven" /></div>
+                                                                        <div class="item" data-slide-number="7" style="width: 470px; height: 183px;"><img src="http://placehold.it/770x300&text=eight" /></div>
                                                                 </div>
                                                                 <!-- Carousel nav -->
                                                                 <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
@@ -206,7 +206,7 @@
                                         <ul class="thumbnails">
                                                 <li class="span2">
                                                         <a class="thumbnail" id="carousel-selector-0">
-                                                                <img src="http://placehold.it/170x100&text=one" />
+                                                                <img style="width: 160px; height: 94px;" src="{{ asset('bundles/infocorpsintuf/images/sintuf1.jpg') }} " />
                                                         </a>
                                                 </li>
                                                 <li class="span2">
@@ -409,7 +409,8 @@
                             </ul>
                             <!-- Tabs content -->
                             <div class="tab-content">
-                                <div class="tab-pane active" id="blog">
+                                {{ render(url('infocorp_sintuf_noticias_list_home')) }}
+                                <!-- <div class="tab-pane active" id="blog">
                                     <section class="post-widget">
                                         <ul class="clearfix">
                                             <li>
@@ -444,7 +445,7 @@
                                             </li>
                                         </ul>
                                     </section>
-                                </div>
+                                </div> -->
                                 
                                 <div class="tab-pane" id="comments">
                                     <section class="recent-comments">

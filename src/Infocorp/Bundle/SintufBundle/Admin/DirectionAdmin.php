@@ -15,8 +15,10 @@ class DirectionAdmin extends Admin
     {
         return $formMapper
             ->add('title', null, array('label' => 'Nome'))
-            ->add('description', null, array('label' => 'Cargo/Função'))
+            ->add('description', null, array('label' => 'Cargo/Funçao'))
             ->add('image', 'sonata_type_model_list', array('label' => 'Imagem'))
+            ->add('link', null, array('label' => 'Currículo Lattes'))
+            ->add('email', 'email', array('label' => 'E-mail'))
             ->add('enabled', null, array(
                 'label' => 'Habilitado',
                 'attr' => array(
@@ -44,13 +46,16 @@ class DirectionAdmin extends Admin
             ->add('description', null, array('label' => 'Cargo/Função'))
             ->add('image', null, array('label' => 'Imagem'))
             ->add('enabled', null, array('label' => 'Habilitado'))
+            ->add('email', 'email', array('label' => 'E-mail'))
             ->add('content', null, array('safe' => true))
+            ->add('link')
         ;
     }
 
     public function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         return $datagridMapper
+            ->add('link')
             ->add('enabled', null, array('label' => 'Habilitado'))
         ;
     }
@@ -59,9 +64,11 @@ class DirectionAdmin extends Admin
     {
         return $listMapper
             ->addIdentifier('title', null, array('label' => 'Nome'))
+            ->add('link')
             ->add('enabled', null, array(
                 'label' => 'Habilitado', 
                 'editable' => true,
+
             ))
         ;
     }

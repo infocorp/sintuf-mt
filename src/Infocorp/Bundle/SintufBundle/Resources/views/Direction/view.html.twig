@@ -1,34 +1,27 @@
 {% extends 'InfocorpSintufBundle::layout.html.twig' %}
+
 {% block content %}
-  
 
-   	<div class="span2">
-      <ul class="nav nav-list">
-        <li class="nav-header">Direção</li>
-          <li>
-              {{ director.title }}
-          </li>
-      </ul>
-    </div>
-
-	<div class="span10">
-		<article>
-		    <h1 class="title-direction">
-		    	{{ director.title }}
-		    </h1>
-
-        <div class="description-direction">
-          {{ director.description | raw }}
+    <div class="container">
+      <div class="row">
+        <div class="span2">
+          <div class="pull-right img-rounded">
+            {% media director.image, 'big' %}
+          </div>
+          <!-- <img src="{% thumbnail director.image, 'small' %}"  alt="" class="img-rounded"> -->
+        </div>
+        <div class="span10">
+          <blockquote>
+            <p>{{ director.title }}</p>
+            <small><i class="icon-user"></i>{{ director.description }}<cite title="Source Title">{{ director.content | raw }}</cite></small>
+          </blockquote>
+          <p>
+            <i class="icon-envelope"></i>{{ director.email }}<br>
+            <i class="icon-globe"></i><a href="{{ director.link }}">Currículo Lattes</a><br>
+            <i class="icon-gift"></i> January 30, 1974
+          </p>
+        </div>
       </div>
-
-        <div class="image-direction">
-          {% thumbnail director.image, 'small' %}
-      </div>  
-
-		    <div class="content-direction">
-		    	{{ director.content | raw }}
-			</div>	    
-	    </article>
-	</div>
+    </div>
 
 {% endblock %}

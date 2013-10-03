@@ -1,60 +1,74 @@
 {% extends 'InfocorpSintufBundle::layout.html.twig' %}
 {% block content %}
 
-<article>
- <h1 class="title-new">
-  {{ news.title }}
-</h1>
 
-<div class="content-new">
-  {{ news.content | raw }}
-</div>	    
-</article>
+<div class="container">
+  <div class="row-fluid">
+    <article class="well">
+      
+      <div class="title-new page-header">
+        <h1>
+          {{ news.title }}
+        </h1>
+        <p></cite><small class="alignleft"><i class="icon-comment"></i>{{ news.commentsCount }} Comentários</p></small>
 
-{# Comentários #}
-<section class="comments">
-  {# Renderiza formulario com ajuda dos helpers do symfony, referencia: http://symfony.com/doc/current/reference/forms/twig_reference.html #}
-  {{ form_start(form, {'action': path('infocorp_news_add_comment', {id: news.id}), 'attr': {'class': 'form-horizontal'}}) }}
-    {% if form %}
-      {{ form_errors(form) }}
-    {% endif %}
-
-    <div class="control-group">
-      {{ form_label(form.name, 'Nome', {'attr': {'class': 'control-label'}}) }}
-      <div class="controls">
-        {{ form_widget(form.name, {'attr': {'class': 'control_group'}}) }}
-        {{ form_errors(form.name) }}
       </div>
-    </div>
 
-    <div class="control-group">
-      {{ form_label(form.email, 'Email', {'attr': {'class': 'control-label'}}) }}
-      <div class="controls">
-        {{ form_widget(form.email, {'attr': {'class': 'control_group'}}) }}
-        {{ form_errors(form.email) }}
-      </div>
-    </div>
+    <div class="content-new">
+      {{ news.content | raw }}
+    </div>	    
+    </article>
+  </div>
 
-    <div class="control-group">
-      {{ form_label(form.url, 'Website (opcional)', {'attr': {'class': 'control-label'}}) }}
-      <div class="controls">
-        {{ form_widget(form.url, {'attr': {'class': 'control_group'}}) }}
-        {{ form_errors(form.url) }}
-      </div>
-    </div>
+  <div class="row-fluid">
+    {# Comentários #}
+    <section class="comments">
+      {# Renderiza formulario com ajuda dos helpers do symfony, referencia: http://symfony.com/doc/current/reference/forms/twig_reference.html #}
+      {{ form_start(form, {'action': path('infocorp_news_add_comment', {id: news.id}), 'attr': {'class': 'form-horizontal'}}) }}
+        {% if form %}
+          {{ form_errors(form) }}
+        {% endif %}
 
-    <div class="control-group">
-      {{ form_label(form.message, 'Comentário', {'attr': {'class': 'control-label'}}) }}
-      <div class="controls">
-        {{ form_widget(form.message, {'attr': {'class': 'control_group'}}) }}
-        {{ form_errors(form.message) }}
-      </div>
-    </div>
+        <div class="control-group">
+          {{ form_label(form.name, 'Nome', {'attr': {'class': 'control-label'}}) }}
+          <div class="controls">
+            {{ form_widget(form.name, {'attr': {'class': 'control_group'}}) }}
+            {{ form_errors(form.name) }}
+          </div>
+        </div>
 
-    {{ form_rest(form) }}
-    <div class="form-actions">
-      <input type="submit" value="Comente!" class="btn btn-large btn-primary">
-    </div>
-  {{ form_end(form, {'render_rest': false}) }}
-</section>
+        <div class="control-group">
+          {{ form_label(form.email, 'Email', {'attr': {'class': 'control-label'}}) }}
+          <div class="controls">
+            {{ form_widget(form.email, {'attr': {'class': 'control_group'}}) }}
+            {{ form_errors(form.email) }}
+          </div>
+        </div>
+
+        <div class="control-group">
+          {{ form_label(form.url, 'Website (opcional)', {'attr': {'class': 'control-label'}}) }}
+          <div class="controls">
+            {{ form_widget(form.url, {'attr': {'class': 'control_group'}}) }}
+            {{ form_errors(form.url) }}
+          </div>
+        </div>
+
+        <div class="control-group">
+          {{ form_label(form.message, 'Comentário', {'attr': {'class': 'control-label'}}) }}
+          <div class="controls">
+            {{ form_widget(form.message, {'attr': {'class': 'control_group'}}) }}
+            {{ form_errors(form.message) }}
+          </div>
+        </div>
+
+        {{ form_rest(form) }}
+        <div class="form-actions">
+          <input type="submit" value="Comente!" class="btn btn-large btn-primary">
+        </div>
+      {{ form_end(form, {'render_rest': false}) }}
+    </section>
+
+
+  </div>
+</div>
 {% endblock %}

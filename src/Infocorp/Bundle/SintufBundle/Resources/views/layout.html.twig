@@ -118,67 +118,62 @@
 
   {% block content %}
 
-  {% endblock %}<!--/container-->
-
-
-
+  {% endblock %}<!--/content-->
 
   {% block footer %}
     <footer id="footer">
-    <div class="container">
-    <div class="row">
-        <div class="span2">
-            <section class="block-dark">
-              <img src="{{ asset('bundles/infocorpsintuf/images/35.png') }}" alt="">
-            </section>
+      <div class="container">
+        <div class="row">
+            <div class="span2">
+                <section class="block-dark">
+                  <img src="{{ asset('bundles/infocorpsintuf/images/35.png') }}" alt="">
+                </section>
+            </div>
+            <div class="span6">
+              <p>Av. Fernando Corrêa da Costa, s/nº. - Campus Universitário - Coxipó - MT - 78060-900</p>
+              <p>Tel: (65) 3028-2924 | Fax: (65) 3028-2925</p>
+              <p>sintuf@terra.com.br / sintuf@ufmt.br</p>
+            </div>
+            <div class="span4">
+                <h3>Contato</h3>
+                <form id="contact" class="form-horizontal" method="post">
+                    <div class="controls">
+                        <input type="text" id="inputName" placeholder="Name" name="inputName">
+                        <label class="ferror" for="inputName" id="fname_error" style="display: none;">Name is required.</label>
+                    </div>
+                    <div class="controls">
+                        <input type="text" id="inputEmail" placeholder="Email" name="inputEmail">
+                        <label class="ferror" for="inputEmail" id="femail_error" style="display: none;">Email is required.</label>
+                    </div>
+                    <div class="controls">
+                        <textarea rows="3" id="inputMessage" placeholder="Message" name="inputMessage"></textarea>
+                        <label class="ferror" for="inputMessage" id="fmessage_error" style="display: none;">Message is required.</label>
+                    </div>
+                    <div class="controls">
+                        <input type="submit" class="btn btn-success btn-large footer-button" value="Enviar">
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="span6">
-          <p>Av. Fernando Corrêa da Costa, s/nº. - Campus Universitário - Coxipó - MT - 78060-900</p>
-          <p>Tel: (65) 3028-2924 | Fax: (65) 3028-2925</p>
-          <p>sintuf@terra.com.br / sintuf@ufmt.br</p>
-          
-        </div>
-        <div class="span4">
-            <h3>Contato</h3>
-            <form id="contact" class="form-horizontal" method="post">
-                <div class="controls">
-                    <input type="text" id="inputName" placeholder="Name" name="inputName">
-                    <label class="ferror" for="inputName" id="fname_error" style="display: none;">Name is required.</label>
-                </div>
-                <div class="controls">
-                    <input type="text" id="inputEmail" placeholder="Email" name="inputEmail">
-                    <label class="ferror" for="inputEmail" id="femail_error" style="display: none;">Email is required.</label>
-                </div>
-                <div class="controls">
-                    <textarea rows="3" id="inputMessage" placeholder="Message" name="inputMessage"></textarea>
-                    <label class="ferror" for="inputMessage" id="fmessage_error" style="display: none;">Message is required.</label>
-                </div>
-                <div class="controls">
-                    <input type="submit" class="btn btn-success btn-large footer-button" value="Enviar">
-                </div>
-            </form>
-        </div>
-    </div>
-    </div>
-</footer>
+      </div>
+    </footer>
   {% endblock %}
 
   {% block menu_footer %}
 
-  <section id="footer-menu">
-    <div class="container">
-        <div class="row">
-            <p class="span12"><span>© Copyright 2013, <span class="color2">SINTUF-MT</span> | Todos os direitos reservados | Desenvolvido por Infocorp - Empresa Júnior</span></p>
-
-        </div>
-    </div>
-</section>
+    <section id="footer-menu">
+      <div class="container">
+          <div class="row">
+              <p class="span12"><span>© Copyright 2013, <span class="color2">SINTUF-MT</span> | Todos os direitos reservados | Desenvolvido por Infocorp - Empresa Júnior</span></p>
+          </div>
+      </div>
+    </section>
 
   {% endblock %}
 
   {% block vai_topo %}
 
-  <a href="#" id="toTop" style="display: inline;"><span id="toTopHover"></span>To Top</a>
+    <a href="#" id="toTop" style="display: inline;"><span id="toTopHover"></span>To Top</a>
 
   {% endblock %}
 
