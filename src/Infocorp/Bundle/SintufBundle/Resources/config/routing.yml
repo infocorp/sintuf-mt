@@ -57,7 +57,13 @@ infocorp_news_add_comment:
 
 sintuf_affiliate:
     path: /afilie-se
+    methods: [GET]
     defaults: { _controller: InfocorpSintufBundle:Affiliate:index }
+
+sintuf_affiliate_create:
+    path: /afilie-se
+    methods: [POST]
+    defaults: { _controller: InfocorpSintufBundle:Affiliate:create }
 
 infocorp_sintuf_covenant_list:
     path: /convenios

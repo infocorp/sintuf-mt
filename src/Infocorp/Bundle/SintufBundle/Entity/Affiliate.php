@@ -188,7 +188,7 @@ class Affiliate
     /**
      * @var string
      *
-     * @ORM\Column(name="pis", type="string", length=30)
+     * @ORM\Column(name="pis", type="string", length=30, nullable=true)
      */
     private $pis;
 
