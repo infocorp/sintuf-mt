@@ -23,6 +23,24 @@
   <div class="row-fluid">
     {# Comentários #}
     <section class="comments">
+      
+      {% if news.comments %}
+        <div class="comment-wrapper">
+          <h2>Comentários</h2><hr />
+        {% for comment in news.comments %}
+          {% if comment.status == 1 %}
+          <div class="comment-unit">
+            <span>{{ comment.name }}</span>
+            {% if comment.url %}
+              <a class="comment-url" target="_blank" href="{{ comment.url }}">{{ comment.url }}</a>
+            {% endif %}
+            <p class="comment-message">{{ comment.message }}</p>
+          </div>
+          {% endif %}
+        {% endfor %}
+        </div>
+      {% endif %}
+
       {# Renderiza formulario com ajuda dos helpers do symfony, referencia: http://symfony.com/doc/current/reference/forms/twig_reference.html #}
       {{ form_start(form, {'action': path('infocorp_news_add_comment', {id: news.id}), 'attr': {'class': 'form-horizontal'}}) }}
         {% if form %}
