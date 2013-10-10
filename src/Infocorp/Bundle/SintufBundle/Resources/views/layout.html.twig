@@ -52,6 +52,9 @@
       {% block header %}
 
         <header id="header">
+        {% for flashMessage in app.session.flashbag.get('success') %}
+          <div class="alert alert-success">{{ flashMessage }}</div>
+        {% endfor %}
         <div class="container">
             <div class="row">
                 <div class="span2 logo">

@@ -25,7 +25,6 @@ class AffiliateAdmin extends Admin
             ->add('state', null, array('label' => 'Estado'))
             ->add('birthCity', null, array('label' => 'Cidade natal'))
             ->add('state', null, array('label' => 'UF'))
-            ->add('regime')
             ->add('birthDate', null, array(
                 'label' => 'Data de nascimento',
                 'widget' => 'single_text',

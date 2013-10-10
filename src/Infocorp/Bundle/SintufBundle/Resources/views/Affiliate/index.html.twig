@@ -57,6 +57,15 @@
           </div>
           
           <div class="control-group">
+            {{ form_label(form.city, null, {'attr': {'class': 'control-label'}}) }}
+
+            <div class="controls">
+              {{ form_widget(form.city) }}
+              {{ form_errors(form.city) }}
+            </div>
+          </div>
+          
+          <div class="control-group">
             {{ form_label(form.state, null, {'attr': {'class': 'control-label'}}) }}
 
             <div class="controls">
@@ -339,7 +348,7 @@
           <ul class="dependent-list" data-prototype="{{ form_widget(form.dependents.vars.prototype)|e }}">
           </ul>
         </div>
-
+        {{ form_row(form._token) }}
         <div class="form-actions">
           <input class="btn btn-primary" type="submit" value="Afiliar-se">
         </div>

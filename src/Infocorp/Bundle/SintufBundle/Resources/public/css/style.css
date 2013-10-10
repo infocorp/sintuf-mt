@@ -945,3 +945,30 @@ h3 {
 .span9, .span6 {
 position: relative !important;
 }
+
+/* Noticias - comentários */
+.comment-wrapper {
+  border: solid 1px #e3e3e3;
+  padding: 7px;
+  margin-bottom: 40px;
+}
+
+.comment-unit {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.comment-unit span {
+  display: block;
+  width: 100%;
+  font-size: 30px;
+  margin-bottom: 7px;
+}
+
+.comment-url {
+  font-size: 18px;
+}
+
+.comment-message {
+  font-size: 16px;
+}
