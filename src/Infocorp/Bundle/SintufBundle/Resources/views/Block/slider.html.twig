@@ -1,27 +1,15 @@
-<div id="home_slider">
-      <div id="myCarousel" class="carousel slide">
-      <div class="carousel-inner">
-        {% for  slide in slides %}
-          <div class="item {% if loop.first %}active{% endif %}">
+<div class="slide row-fluid">
+  <div class="callbacks_container">
+    <ul class="rslides" id="slider4">
+      {% for  slide in slides %}
+
+          <li style="width: 770px; height: 282px; float: left; display: block;">
             {% media slide.image, 'reference' %}
-            <div class="container">
-              <div class="carousel-caption">
-                <h1>{{ slide.title }}</h1>
-                <p class="lead">{{ slide.description }}</p>
-                <a class="btn btn-large btn-primary" href="{{ slide.link }}">Leia mais</a>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-    </div><!-- /.carousel -->
+            <p class="caption"><a href="{{ slide.link }}" title="{{ slide.title }}">{{ slide.description|slice(0, 100)  }}</a></p>
+          </li>
 
-      <ul class="news_slider">
-        <span>Últimas notícias</span>
-        {{ render(url('infocorp_sintuf_noticias_list_home')) }}
+      {% endfor %}
 
-      </ul>
-
+    </ul>
   </div>
+</div>

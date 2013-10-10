@@ -13,22 +13,26 @@
                         <!-- slider -->
                         <div class="row">
                             <div class="span8">
-                                <div id="mainslider" class="flexslider">
-                                    
-                                <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 600%; margin-left: -1528px;">
-                                        <li style="width: 764px; height: 400px; float: left; display: block;" class="">
-                                            <img src="{{ asset('bundles/infocorpsintuf/images/sintuf1.jpg') }}" alt="photo">
-                                            <h3><span>Lorem Ipsum Dolor Sit Amet</span><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</a></h3>
-                                        </li>
-                                        <li style="width: 764px; height: 400px; float: left; display: block;" class="">
-                                            <img src="{{ asset('bundles/infocorpsintuf/images/sintuf2.jpg') }}" alt="photo">
-                                            <h3><span>Fusce consequat eleifend diam </span><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</a></h3>
-                                        </li>
-                                        <li style="width: 764px; height: 400px; float: left; display: block;" class="flex-active-slide">
-                                            <img src="{{ asset('bundles/infocorpsintuf/images/sintuf3.jpg') }}" alt="photo">
-                                            <h3><span>Donec elementum tortor</span><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</a></h3>
-                                        </li>
-                                    </ul></div><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next flex-disabled" href="#">Next</a></li></ul></div>
+                                {{ render(url('infocorp_sintuf_slider')) }}
+                                
+                                <!-- Slideshow 4 -->
+
+                                <!-- <div class="callbacks_container">
+                                  <ul class="rslides" id="slider4">
+                                    <li>
+                                      <img src="{{ asset('bundles/infocorpsintuf/images/1.jpg') }}" alt="">
+                                      <p class="caption">This is a caption</p>
+                                    </li>
+                                    <li>
+                                      <img src="{{ asset('bundles/infocorpsintuf/images/2.jpg') }}" alt="">
+                                      <p class="caption">This is another caption</p>
+                                    </li>
+                                    <li>
+                                      <img src="{{ asset('bundles/infocorpsintuf/images/3.jpg') }}" alt="">
+                                      <p class="caption">The third caption</p>
+                                    </li>
+                                  </ul>
+                                </div> -->
                             </div>
                         </div>
                         <!-- content -->
@@ -286,7 +290,7 @@
                             <div class="spacer"></div>
                         </div>
                         <!-- portfolio slider -->
-
+                        <!--
                             <div class="row">
                             <div class="span8">
                                 <div class="title-divider">
@@ -303,7 +307,7 @@
 
 
 
-<!--                         <div class="row">
+                         <div class="row">
                             <div class="span8">
                                 <div class="title-divider">
                                     <h3>Portfolio Slider</h3>
@@ -382,9 +386,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
  
-
+                    -->
 
 
 
@@ -396,7 +400,7 @@
                         <!-- Search -->
                         <section class="search clearfix">
                             <form id="search" class="input-append">
-                                <input class="" id="appendedInputButton" size="16" type="text" value="Pesquisar..." name="search site" onfocus="if(this.value=='Pesquisar...') this.value=''" onblur="if(this.value=='') this.value='Search...'">
+                                <input class="" id="appendedInputButton" size="16" type="text" value="Pesquisar..." name="search site" onfocus="if(this.value=='Pesquisar...') this.value=''" onblur="if(this.value=='') this.value='Pesquisar...'">
                                 <input class="btn search-bt" type="submit" name="submit" value="">
                             </form>
                         </section>
@@ -410,42 +414,6 @@
                             <!-- Tabs content -->
                             <div class="tab-content">
                                 {{ render(url('infocorp_sintuf_noticias_list_home')) }}
-                                <!-- <div class="tab-pane active" id="blog">
-                                    <section class="post-widget">
-                                        <ul class="clearfix">
-                                            <li>
-                                                <div class="avatar">
-                                                    <a href="#"><img src="{{ asset('bundles/infocorpsintuf/images/sidebar1.jpg') }}" alt="photo"></a>
-                                                </div>
-                                                <div class="description">
-                                                    <p><a href="blog-single.html">Etiam sagittis purus quis neque pharetra pretium tempor</a></p>
-                                                    <span class="date"><em>12 Apr 2012, 3 comments</em></span>
-                                                </div>
-                                                <div class="clear"></div>
-                                            </li>
-                                            <li>
-                                                <div class="avatar">
-                                                    <a href="#"><img src="{{ asset('bundles/infocorpsintuf/images/sidebar2.jpg') }}" alt="photo"></a>
-                                                </div>
-                                                <div class="description">
-                                                    <p><a href="blog-single.html">Maecenas malesuada convallis varius. Duis nec luctus leo nam venenatis</a></p>
-                                                    <span class="date"><em>12 Apr 2012, 3 comments</em></span>
-                                                </div>
-                                                <div class="clear"></div>
-                                            </li>
-                                            <li>
-                                                <div class="avatar">
-                                                    <a href="#"><img src="{{ asset('bundles/infocorpsintuf/images/sidebar3.jpg') }}" alt="photo"></a>
-                                                </div>
-                                                <div class="description">
-                                                    <p><a href="blog-single.html">Donec feugiat luctus sem malesuada sodales praesent rutrum enim eget</a></p>
-                                                    <span class="date"><em>12 Apr 2012, 3 comments</em></span>
-                                                </div>
-                                                <div class="clear"></div>
-                                            </li>
-                                        </ul>
-                                    </section>
-                                </div> -->
                                 
                                 <div class="tab-pane" id="comments">
                                     <section class="recent-comments">
@@ -475,8 +443,43 @@
                             <h3>Parceiros</h3>
                             <div class="divider-arrow"></div>
                         </div>
-                        <section class="post-widget block-grey">
-                            <ul class="clearfix block-light wrap15">
+
+                        {{ render(url('infocorp_sintuf_partner_list_home')) }}
+
+                        <!--<section class="post-widget block-grey">
+                            <ul class="slider8">
+                                <li class="slide">
+                                    <a href="#"><img src="{{ asset('bundles/infocorpsintuf/images/sidebar1.jpg') }}" alt="photo"></a>
+                                    <a href="#">Ut in lacus rhoncus elit egesta sluctus. Nullam at</a>
+                                    <p><em>12 Apr 2012, 3 comments</em></p>
+                                    <div class="clear"></div>
+                                </li>
+                                <li class="slide">
+                                    <a href="#"><img src="http://placehold.it/345x100&text=FooBar1" alt="photo"></a>
+                                    <a href="#">Ut in lacus rhoncus elit egesta sluctus. Nullam at</a>
+                                    <p><em>12 Apr 2012, 3 comments</em></p>
+                                    <div class="clear"></div>
+                                </li>
+                                <li class="slide">
+                                    <a href="#"><img src="http://placehold.it/345x100&text=FooBar1" alt="photo"></a>
+                                    <a href="#">Ut in lacus rhoncus elit egesta sluctus. Nullam at</a>
+                                    <p><em>12 Apr 2012, 3 comments</em></p>
+                                    <div class="clear"></div>
+                                </li>
+                            </ul>
+<div class="slider8">
+  <div class="slide"><img src="http://placehold.it/345x100&text=FooBar1"></div>
+  <div class="slide"><img src="http://placehold.it/345x100&text=FooBar2"></div>
+  <div class="slide"><img src="http://placehold.it/345x100&text=FooBar3"></div>
+  <div class="slide"><img src="http://placehold.it/345x100&text=FooBar4"></div>
+  <div class="slide"><img src="http://placehold.it/345x100&text=FooBar5"></div>
+  <div class="slide"><img src="http://placehold.it/345x100&text=FooBar6"></div>
+  <div class="slide"><img src="http://placehold.it/345x100&text=FooBar7"></div>
+  <div class="slide"><img src="http://placehold.it/345x100&text=FooBar8"></div>
+  <div class="slide"><img src="http://placehold.it/345x100&text=FooBar9"></div>
+  <div class="slide"><img src="http://placehold.it/345x100&text=FooBar10"></div> 
+</div>-->
+                             <!-- <ul class="clearfix block-light wrap15">
                                 <li>
                                     <a href="#"><img src="{{ asset('bundles/infocorpsintuf/images/sidebar1.jpg') }}" alt="photo"></a>
                                     <a href="#">Ut in lacus rhoncus elit egesta sluctus. Nullam at</a>
@@ -496,7 +499,8 @@
                                     <div class="clear"></div>
                                 </li>
                             </ul>
-                        </section>
+                        </section>-->
+
                         <!-- Advertisment -->
                         <div class="title-divider">
                             <h3>Anúncios</h3>

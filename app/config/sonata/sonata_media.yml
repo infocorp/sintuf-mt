@@ -55,16 +55,16 @@ sonata_media:
 # The LiipImagineBundle can be used if you want to convert on demand an image
 # to a specific format. (ie a controller render the file)
 #    more information can be found here : https://github.com/liip/LiipImagineBundle
-#
-#liip_imagine:
+
+# liip_imagine:
 #    filter_sets:
 #        default_small:
 #            quality: 75
 #            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
 #            filters:
 #                thumbnail: { size: [100, 70], mode: outbound }
-#
-#
+
+
 #        default_big:
 #            quality: 75
 #            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'

@@ -1,9 +1,27 @@
 {% extends 'InfocorpSintufBundle::layout.html.twig' %}
 {% block content %}
-<ul class="nav_institucional">
-  <li class="servicos_inst"><strong>Convênios</strong></li>
-  {% for covenant in covenants %}
-    <li><a href="{{ path('infocorp_sintuf_covenant_view', {slug: covenant.slug}) }}">{{ covenant.title }}</a></li>
-  {% endfor %}
-</ul>
+	
+	<div class="container">
+		<div class="row-fluid">
+			<div class="well">
+				<table class="table table-hover">
+	              <thead>
+	                <tr>
+	                  <th>Convênio</th>
+	                  <th>Endereço</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	              	{% for covenant in covenants %}
+	              		<tr>
+	              			<td><a href="{{ path('infocorp_sintuf_covenant_view', {slug: covenant.slug}) }}">{{ covenant.title }}</a></td>
+	              			<td>{{ covenant.description }}</td>
+	              		</tr>
+	              	{% endfor %}
+	              </tbody>
+	            </table>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}

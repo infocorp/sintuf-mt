@@ -8,9 +8,13 @@
 {% endblock %}
 
 {% block content %}
+
+<div class="container">
+  <div class="row-fluid">
   {% if gallery.name %}
     <h3 class="sonata-media-block-media-title">{{ gallery.name }}</h3>
   {% endif %}
+
 
   <div class="sonata-media-block-gallery-container">
     <div id="sonata-media-block-gallery" class="nivoGallery">
@@ -23,18 +27,9 @@
       </ul>
     </div>
   </div>
+  </div>
+  </div>
   
-  <script src="{{ asset('bundles/sonatamedia/nivo-gallery/jquery.nivo.gallery.min.js') }}"></script>
-  <script type="text/javascript">
-    jQuery(document).ready(function() {
-      jQuery('#sonata-media-block-gallery').nivoGallery({
-        pauseTime:     5000,
-        animSpeed:     300,
-        effect:        'fade',
-        startPaused:   false,
-        directionNav:  true,
-        progressBar:   true
-      });
-    });
-  </script>
+  
+  
 {% endblock %}

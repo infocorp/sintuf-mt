@@ -70,6 +70,9 @@ class DirectionAdmin extends Admin
                 'editable' => true,
 
             ))
+            ->addIdentifier('description', null, array(
+                'label' => 'Cargo/Função',
+            ))
         ;
     }
 }

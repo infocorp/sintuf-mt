@@ -11,11 +11,11 @@ class PartnerController extends Controller
     public function listAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $instManager = $em->getRepository('InfocorpSintufBundle:Partners');
+        $instManager = $em->getRepository('InfocorpSintufBundle:Partner');
 
         $partners = $instManager->findBy(array('enabled' => 1));
 
-        return $this->render('InfocorpSintufBundle:Partners:list.html.twig', array(
+        return $this->render('InfocorpSintufBundle:Partner:list.html.twig', array(
             'partners' => $partners,
         ));
     }
@@ -35,8 +35,20 @@ class PartnerController extends Controller
             throw new NotFoundHttpException('Parceiro não encontrado');
         }
 
-        return $this->render('InfocorpSintufBundle:Partners:view.html.twig', array(
+        return $this->render('InfocorpSintufBundle:Partner:view.html.twig', array(
             'partner' => $partnerContent,
+        ));
+    }
+
+    public function homeListAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $instManager = $em->getRepository('InfocorpSintufBundle:Partner');
+
+        $partners = $instManager->findBy(array('enabled' => 1));
+
+        return $this->render('InfocorpSintufBundle:Partner:home_list.html.twig', array(
+            'partners' => $partners,
         ));
     }
 }

@@ -5,7 +5,8 @@
   {% block stylesheets %}
     {% stylesheets 
       'bundles/infocorpsintuf/css/style.css'
-      'bundles/infocorpsintuf/css/prettyPhoto.css'
+      'bundles/infocorpsintuf/css/responsiveslides.css'
+      'bundles/infocorpsintuf/css/jquery.bxslider.css'
       'bundles/infocorpsintuf/css/bootstrap/bootstrap.min.css'
       'bundles/infocorpsintuf/css/bootstrap/bootstrap-responsive.css'
       'bundles/infocorpsintuf/css/normalize.css'
@@ -20,7 +21,6 @@
 </head>
 
 <body>
-
     {% block menu_top %}
 
       <section id="top-menu">
@@ -55,7 +55,7 @@
         <div class="container">
             <div class="row">
                 <div class="span2 logo">
-                    <a href="{{ path('infocorp_sintuf_homepage') }}"><img src="{{ asset('bundles/infocorpsintuf/images/logo1.png') }}" alt="logo"></a>
+                    <a href="{{ path('infocorp_sintuf_homepage') }}"><img src="{{ asset('bundles/infocorpsintuf/images/logo_sintuf.png') }}" alt="logo"></a>
                 </div>
                 <div class="span10 description">
                     <a href="{{ path('infocorp_sintuf_homepage') }}" class="alignright description">
@@ -65,47 +65,46 @@
             </div>
 
             {% block menu %}
-              {{ knp_menu_render('InfocorpSintufBundle:MenuBuilder:mainMenu', {'template': 'InfocorpSintufBundle:Menu:sintuf_menu.html.twig'}) }}
+              {{ knp_menu_render('InfocorpSintufBundle:MenuBuilder:mainMenu', {'depth': 4,'template': 'InfocorpSintufBundle:Menu:sintuf_menu.html.twig'}) }}
               <!-- <nav id="menu">
-                <ul class="clearfix sf-js-enabled sf-shadow">
-                    <li><a href="{{ path('infocorp_sintuf_homepage') }}" class="current">Início</a></li>
-                    
-                    <li class=""><a href="./about.html" class="sf-with-ul">Institucional</a>
-                        <ul style="display: none; visibility: hidden;">
-                            <li><a href="./about.html">Sobre nós</a></li>
-                            <li class="last"><a href="./services.html">Nossos serviços</a></li>
+                <ul>
+                  <li><a href="{{ path('infocorp_sintuf_homepage') }}" class="current">Início</a></li>
+                  <li><a href="#">Serviços</a>
+                    <ul>
+                      <li><a href="#">Criação</a></li>
+                      <li><a href="#">Design</a>
+                        <ul>
+                          <li><a href="#">Photoshop</a></li>
+                          <li><a href="#">Illustrator</a></li>
+                          <li><a href="#">Fireworks</a></li>
                         </ul>
-                    </li>
-                    <li class=""><a href="./portfolio2.html" class="sf-with-ul">Comunicação</a>
-                        <ul style="display: none; visibility: hidden;">
-                            <li><a href="./portfolio2.html" class="sf-with-ul">Jornal</a>
-                                <ul style="display: none; visibility: hidden;">
-                                    <li><a href="./portfolio2.html">Categoria 1</a></li>
-                                    <li class="last"><a href="./portfolio2ex.html">Categoria 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./portfolio3.html" class="sf-with-ul">Notícias</a>
-                                <ul style="display: none; visibility: hidden;">
-                                    <li><a href="./portfolio3.html">Categoria 1</a></li>
-                                    <li class="last"><a href="./portfolio3ex.html">Categoria 2</a></li>
-                                </ul>
-                            </li>
-                            <li class="last"><a href="./portfolio4.html" class="sf-with-ul">Imprensa</a>
-                                <ul style="display: none; visibility: hidden;">
-                                    <li><a href="./portfolio4.html">Categoria 1</a></li>
-                                    <li class="last"><a href="./portfolio4ex.html">Categoria 2</a></li>
-                                </ul>
-                            </li>
+                      </li>
+                      <li><a href="#">Aplicativos</a>
+                        <ul>
+                          <li><a href="#">Apple</a></li>
+                          <li><a href="#">PHP</a></li>
+                          <li><a href="#">JAVA</a></li>
                         </ul>
-                    </li>
-                    <li><a href="./blog.html" class="sf-with-ul">Jurídico</a>
-                        <ul style="display: none; visibility: hidden;">
-                            <li><a href="./blog.html">Processos</a></li>
-                            <li class="last"><a href="./blog-single.html">Legislação</a></li>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Empresa</a>
+                    <ul>
+                      <li><a href="#">Sobre Nós</a>
+                        <ul>
+                          <li><a href="#">História</a></li>
+                          <li><a href="#">Portfólio</a></li>
+                          <li><a href="#">Outros</a></li>
                         </ul>
-                    </li>
-                    <li><a href="{{ path('infocorp_sintuf_fale_conosco') }}">Contato</a></li>
-            </nav> -->
+                      </li>
+                      <li><a href="#">Expediente</a></li>
+                      <li><a href="#">Funcionários</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Expediente</a></li>
+                  <li><a href="{{ path('infocorp_sintuf_fale_conosco') }}">Contato</a></li>
+                </ul>
+              </nav> -->
 
             {% endblock %}
 
@@ -120,13 +119,15 @@
 
   {% endblock %}<!--/content-->
 
+  
+
   {% block footer %}
     <footer id="footer">
       <div class="container">
         <div class="row">
             <div class="span2">
                 <section class="block-dark">
-                  <img src="{{ asset('bundles/infocorpsintuf/images/35.png') }}" alt="">
+                  <img src="{{ asset('bundles/infocorpsintuf/images/ano_sintuf.png') }}" alt="">
                 </section>
             </div>
             <div class="span6">
@@ -139,15 +140,15 @@
                 <form id="contact" class="form-horizontal" method="post">
                     <div class="controls">
                         <input type="text" id="inputName" placeholder="Name" name="inputName">
-                        <label class="ferror" for="inputName" id="fname_error" style="display: none;">Name is required.</label>
+                        <label class="ferror" for="inputName" id="fname_error" style="display: none;">Nome é obrigatório.</label>
                     </div>
                     <div class="controls">
                         <input type="text" id="inputEmail" placeholder="Email" name="inputEmail">
-                        <label class="ferror" for="inputEmail" id="femail_error" style="display: none;">Email is required.</label>
+                        <label class="ferror" for="inputEmail" id="femail_error" style="display: none;">E-mail é obrigatório.</label>
                     </div>
                     <div class="controls">
                         <textarea rows="3" id="inputMessage" placeholder="Message" name="inputMessage"></textarea>
-                        <label class="ferror" for="inputMessage" id="fmessage_error" style="display: none;">Message is required.</label>
+                        <label class="ferror" for="inputMessage" id="fmessage_error" style="display: none;">Mensagem é obrigatório.</label>
                     </div>
                     <div class="controls">
                         <input type="submit" class="btn btn-success btn-large footer-button" value="Enviar">
@@ -164,7 +165,7 @@
     <section id="footer-menu">
       <div class="container">
           <div class="row">
-              <p class="span12"><span>© Copyright 2013, <span class="color2">SINTUF-MT</span> | Todos os direitos reservados | Desenvolvido por Infocorp - Empresa Júnior</span></p>
+              <p class="span12"><span>© Copyright 2013, <span class="color2">SINTUF-MT</span> | Todos os direitos reservados | Desenvolvido por <a href="http://www.infocorpconsultoria.com.br"><img src="{{ asset('bundles/infocorpsintuf/images/infocorp_logo.png') }}" alt="Infocorp - Empresa Júnior"></a></span></p>
           </div>
       </div>
     </section>
@@ -179,24 +180,68 @@
 
       {% block javascripts %}
       {% javascripts 
-        'bundles/infocorpsintuf/js/bootstrap.min.js'
-        'bundles/infocorpsintuf/js/jquery.easing.1.3.js'
-        'bundles/infocorpsintuf/js/hoverIntent.js'
-        'bundles/infocorpsintuf/js/jquery.hoverdir.js'
-        'bundles/infocorpsintuf/js/accordion.settings.js'
-        'bundles/infocorpsintuf/js/jquery.ui.totop.js'
-        'bundles/infocorpsintuf/js/ajax-mail.js'
-        'bundles/infocorpsintuf/js/jquery.elastislide.js'
-        'bundles/infocorpsintuf/js/jquery.flexslider.js'
-        'bundles/infocorpsintuf/js/jquery.prettyPhoto.js'
-        'bundles/infocorpsintuf/js/jquery.quicksand.js'
-        'bundles/infocorpsintuf/js/smoothscroll.js'
-        'bundles/infocorpsintuf/js/superfish.js'
+        'bundles/infocorpsintuf/js/bootstrap.min.js' 
       %}
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="{{ asset('bundles/sonatamedia/nivo-gallery/jquery.nivo.gallery.min.js') }}"></script>
+        <script src="{{ asset('bundles/infocorpsintuf/js/responsiveslides.min.js') }}"></script>
+        <script src="{{ asset('bundles/infocorpsintuf/js/jquery.ui.totop.js') }}"></script>
+        <script src="{{ asset('bundles/infocorpsintuf/js/hoverIntent.js') }}"></script>
+        <script src="{{ asset('bundles/infocorpsintuf/js/smoothscroll.js') }}"></script>
+        <script src="{{ asset('bundles/infocorpsintuf/js/jquery.easing.1.3.js') }}"></script>
+        <script src="{{ asset('bundles/infocorpsintuf/js/accordion.settings.js') }}"></script>
+        <script src="{{ asset('bundles/infocorpsintuf/js/ajax-mail.js') }}"></script>
+        <script src="{{ asset('bundles/infocorpsintuf/js/jquery.elastislide.js') }}"></script>
+        <script src="{{ asset('bundles/infocorpsintuf/js/jquery.bxslider.min.js') }}"></script>
         <script src="{{ asset_url }}"></script>
 
-        <script>
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+      jQuery('#sonata-media-block-gallery').nivoGallery({
+        pauseTime:     5000,
+        animSpeed:     300,
+        effect:        'fade',
+        startPaused:   false,
+        directionNav:  true,
+        progressBar:   true
+      });
+    });
+  </script>
+
+
+  <script>
+    // You can also use "$(window).load(function() {"
+    $(function(){
+
+      // Slideshow 4
+      $('#slider4').responsiveSlides({
+        auto: false,
+        pager: false,
+        pause: true,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
+
+    });
+  </script>
+
+
+  <script>
+       // To Top Button
+      $(function(){
+          $().UItoTop({ easingType: 'easeOutQuart' });
+      });
+  </script>
+
+  <script>
   jQuery(document).ready(function($) {
  
         $('#myCarousel').carousel({
@@ -219,135 +264,23 @@
                 var id = $('.item.active').data('slide-number');
                 $('#carousel-text').html($('#slide-content-'+id).html());
         });
- 
- 
-});
-</script>
-
-         <script>
-        //   !function ($) {
-        //     $(function(){
-        //       // carousel demo
-        //       $('#myCarousel').carousel();
-        //       $('#myCarouselParceiros').carousel();
-        //     })
-        //   }(window.jQuery)
-        //Menu
- //Menu
-    // Script para corrigir o menu
-    $(document).ready(function() {
-      $('ul.sf-shadow').addClass('clearfix');
-    });
-    jQuery('#menu > ul').superfish({ 
-        delay:       1000,                           
-        animation:   {opacity:'show', height:'show'}, 
-        speed:       'fast',                          
-        autoArrows:  true
-
-    });
-    $('.sf-sub-indicator').remove();
-    (function() {
-    var $menu = $('#menu ul'),
-      optionsList = '<option value="" selected>Menu...</option>';
-
-    $menu.find('li').each(function() {
-      var $this   = $(this),
-        $anchor = $this.children('a'),
-        depth   = $this.parents('ul').length - 1,
-        indent  = '';
-
-      if( depth ) {
-        while( depth > 0 ) {
-          indent += ' - ';
-          depth--;
-        }
-      }
-      optionsList += '<option value="' + $anchor.attr('href') + '">' + indent + ' ' + $anchor.text() + '</option>';
-    }).end()
-      .after('<select class="res-menu">' + optionsList + '</select>');
-
-    $('.res-menu').on('change', function() {
-      window.location = $(this).val();
-    });
-    
-  })();
-    
-    $(".our-blog article").hover(function () {
-      $(this).find("img").stop(true, true).animate({ opacity: 0.7 }, 300);
-    }, function() {
-      $(this).find("img").stop(true, true).animate({ opacity: 1 }, 300);
-    });
-    </script>
-
-<script>
-
-$(window).each(function() {
-  $('.flexslider').flexslider({
-    animation: "slide",
-    useCSS: false,
-    controlNav: false,   
-    animationLoop: false,
-    smoothHeight: true
   });
-});
+  </script>
 
-</script>
+  <script>
 
-<script>
-     // To Top Button
-    $(function(){
-        $().UItoTop({ easingType: 'easeOutQuart' });
-    });
-</script>
-
-<script>
-   $('.p2col .span6:even').addClass('no-margin-left');
-
-    //prettyPhoto
-    $('a[data-rel]').each(function() {
-        $(this).attr('rel', $(this).data('rel'));
-    });
-    $("a[rel^='prettyPhoto']").prettyPhoto();
-
-
-    $('.da-thumbs > li, .da-thumbs > article').hoverdir();
-</script>
-
-<script>
-    //Portfolio
-  $(window).load(function(){
-  var $portfolioClone = $(".filtrable").clone();
-  $("#filtrable a").live('click', function(e){
-    
-    $("#filtrable li").removeClass("current");  
-    
-    var $filterClass = $(this).parent().attr("class");
-        var $filteredPortfolio = $portfolioClone.find("article");
-
-    if ( $filterClass == "all" ) {
-      $filteredPortfolio = $portfolioClone.find("article");
-    } else {
-      $filteredPortfolio = $portfolioClone.find("article[data-type~=" + $filterClass + "]");
-    }
-  
-    $(".filtrable").quicksand( $filteredPortfolio, { 
-      duration: 800, 
-      easing: 'easeOutQuint' 
-    }, function(){
-      
-            $('.da-thumbs > li, .da-thumbs > article, .da-thumbs > div').hoverdir();
-            
-            $("a[rel^='prettyPhoto']").prettyPhoto();
-
-    });
-
-    $(this).parent().addClass("current");
-        
-    e.preventDefault();
+  $(document).ready(function(){
+  $('.slider8').bxSlider({
+    mode: 'vertical',
+    auto: 'true',
+    caption: 'true',
+    slideWidth: 350,
+    minSlides: 1,
+    slideMargin: 10
   });
   });
 
-</script>
+  </script>
 
       {% endjavascripts %}
     {% endblock %}

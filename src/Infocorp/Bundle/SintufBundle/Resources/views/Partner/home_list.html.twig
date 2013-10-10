@@ -1,0 +1,13 @@
+<section class="post-widget block-grey">
+    <ul class="slider8">
+      {% for partner in partners %}
+
+        <li class="slide" style="width: 270px;">
+          <a href="{{ partner.link }}" alt="Site">{% media partner.image, 'reference' %}</a>
+          <a href="{{ path('infocorp_sintuf_partner_view', {slug: partner.slug}) }}"><p><em>{{ partner.title }}</em></p></a>
+          <div class="clear"></div>
+        </li>
+
+      {% endfor %}
+    </ul>
+</section>
