@@ -17,8 +17,8 @@ parameters:
     secret:             S5G1DG54SD1G54SDGSGSD54G
 
     # Sonata Admin Options
-    sonata_admin.title:             Affemat
-    sonata_admin.logo_title:        /bundles/infocorpaffemat/logo.png
+    sonata_admin.title:             Sintuf
+    sonata_admin.logo_title:        /bundles/infocorpsintuf/logo.png
 
     # Sonata News Options
     sonata_news.blog_title:         My Awesome Blog
