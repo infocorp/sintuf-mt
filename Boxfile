@@ -57,6 +57,6 @@ web1:
     #- "php composer.phar install --prefer-source --no-dev"
     #- "php app/console --env=prod --no-debug assetic:dump -n"
   before_deploy:
-    - "app/console cache:clear --env=prod"
+    #- "app/console cache:clear --env=prod"
     #- "app/console doctrine:ensure-production-settings"
     #- "app/console doctrine:schema:update --env=prod --force"
