@@ -18,7 +18,7 @@ parameters:
 
     # Sonata Admin Options
     sonata_admin.title:             Sintuf
-    sonata_admin.logo_title:        /bundles/infocorpsintuf/logo.png
+    sonata_admin.logo_title:        /bundles/infocorpsintuf/images/logo.png
 
     # Sonata News Options
     sonata_news.blog_title:         My Awesome Blog
