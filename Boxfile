@@ -52,5 +52,5 @@ web1:
   before_deploy:
     - "app/console cache:clear --env=prod"
     - "app/console doctrine:ensure-production-settings"
-    #- "app/console doctrine:database:create"
-    #- "app/console doctrine:schema:update --force"
+    - "app/console doctrine:database:create"
+    - "app/console doctrine:schema:update --force"
