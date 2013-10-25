@@ -1,7 +1,3 @@
-db1:
-  name: sintuf
-  type: mysql
-
 web1:
   ################################################
   ## GENERAL SETTINGS
